@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title> Test </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-    <link href="/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
   </head>
   <body>
@@ -20,9 +20,50 @@
     </svg> <!-- Added SVG close icon -->
 </div>
 
+<h1>Test algolia instant search</h1>
+<header>
+   <a href="." title="Home"><img src="img/instant_search_logo@2x.png"/></a>
+   <div id="search-input"></div>
+   <div id="search-input-icon"></div>
+ </header>
+
+ <main>
+  <div id="left-column">
+    <div id="activity" class="facet"></div>
+  </div>
+  <div id="right-column">
+    <div id="stats"></div>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+  </div>
+</main>
+
+<script type="text/html" id="hit-template">
+  <div class="hit">
+    <div class="hit-image">
+      <img src="{{image}}" alt="{{name}}">
+    </div>
+    <div class="hit-content">
+      <h3 class="hit-price">${{price}}</h3>
+      <h2 class="hit-name">{{{_highlightResult.title.value}}}</h2>
+      <p class="hit-description">{{{_highlightResult.title_prefix.value}}}</p>
+    </div>
+  </div>
+</script>
+
+<script type="text/html" id="no-results-template">
+  <div id="no-results-message">
+    <p>We didn't find any results for the search <em>"{{query}}"</em>.</p>
+    <a href="." class="clear-all">Clear search</a>
+  </div>
+</script>
+
+
 <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+
 <script src="app.js"></script>
 
   </body>

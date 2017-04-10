@@ -37,5 +37,5 @@ app.listen(process.env.port || 4000, function(){
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
-		//algolia.algolia_setting();
+		// algolia.algolia_setting();
 });
