@@ -6,13 +6,15 @@ const algolia = require('./routes/algolia');
 
 // Set-up express app
 const app = express();
+// Set up controler
+app.set('view engine', 'ejs');
+
+// first midelware
+app.use(express.static('./public'));
 
 // Connect to mongoDB
 mongoose.connect('mongodb://localhost/ninjago');
 mongoose.Promise = global.Promise;
-
-// first midelware
-app.use(express.static('public2'));
 
 // use the body parser before the routes
 app.use(bodyParser.json());
@@ -26,6 +28,22 @@ app.use(function(err, req, res, next){
 	res.status(422).send({
 		error : err.message
 	});
+});
+
+app.get('/', function(req, res){
+	res.render('home');
+});
+
+app.get('/map', function(req, res){
+	res.render('map');
+});
+
+app.get('/routes', function(req, res){
+	res.render('routes');
+});
+
+app.get('/test', function(req, res){
+	res.render('test_style');
 });
 
 // Listen for request

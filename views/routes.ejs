@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Rebufa routes </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+  <body>
+    <% include partial/nav.ejs %>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <h1>Test algolia instant search</h1>
+    <header>
+       <a href="." title="Home"><img src="img/instant_search_logo@2x.png"/></a>
+       <div id="search-input"></div>
+       <div id="search-input-icon"></div>
+     </header>
+
+     <main>
+      <div id="left-column">
+        <div id="activity" class="facet"></div>
+      </div>
+      <div id="right-column">
+        <div id="stats"></div>
+        <div id="hits"></div>
+        <div id="pagination"></div>
+      </div>
+    </main>
+
+    <script type="text/html" id="hit-template">
+      <div class="hit">
+        <div class="hit-image">
+          <img src="{{image}}" alt="{{name}}">
+        </div>
+        <div class="hit-content">
+          <h3 class="hit-price">${{price}}</h3>
+          <h2 class="hit-name">{{{_highlightResult.title.value}}}</h2>
+          <p class="hit-description">{{{_highlightResult.title_prefix.value}}}</p>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/html" id="no-results-template">
+      <div id="no-results-message">
+        <p>We didn't find any results for the search <em>"{{query}}"</em>.</p>
+        <a href="." class="clear-all">Clear search</a>
+      </div>
+    </script>
+
+    <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="routes.js"></script>
+    </div>
+    <% include partial/footer.ejs %>
+  </body>
+</html>
