@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Setting debug to true
-mongoose.set('debug', true);
-console.log("Debug mode enabled.")
-
 // Create geo location schema
 const GeoSchema = new Schema({
 	type: {

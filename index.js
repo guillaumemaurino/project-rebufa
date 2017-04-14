@@ -6,13 +6,19 @@ const algolia = require('./routes/algolia');
 
 // Set-up express app
 const app = express();
+// Set up controler
+app.set('view engine', 'ejs');
+
+// first midelware
+app.use(express.static('./public'));
 
 // Connect to mongoDB
 mongoose.connect('mongodb://localhost/ninjago');
 mongoose.Promise = global.Promise;
 
-// first midelware
-app.use(express.static('public2'));
+// Setting debug to true
+mongoose.set('debug', false);
+console.log("Mongoose debug mode disabled.")
 
 // use the body parser before the routes
 app.use(bodyParser.json());
@@ -28,6 +34,22 @@ app.use(function(err, req, res, next){
 	});
 });
 
+app.get('/', function(req, res){
+	res.render('home');
+});
+
+app.get('/map', function(req, res){
+	res.render('map');
+});
+
+app.get('/routes', function(req, res){
+	res.render('routes', {search: req.query.search});
+});
+
+app.get('/test', function(req, res){
+	res.render('test_style');
+});
+
 // Listen for request
 app.listen(process.env.port || 4000, function(){
 	console.log('Now listening for requests');
@@ -37,5 +59,5 @@ app.listen(process.env.port || 4000, function(){
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
-		// algolia.algolia_setting();
+		algolia.algolia_setting();
 });
