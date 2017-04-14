@@ -3,15 +3,16 @@ var search = instantsearch({
   appId: 'TR971CJDWI',
   apiKey: 'fc29e88ddda3305761a94ef15e700bd1', // search only API key, no ADMIN key
   indexName: 'routes',
-  urlSync: false
+  urlSync: true
 });
 
 search.addWidget(
   instantsearch.widgets.searchBox({
-    container: '#search-input',
+    container: '#aa-search-input',
     placeholder: 'Search for routes'
   })
 );
+
 
 search.addWidget(
   instantsearch.widgets.hits({

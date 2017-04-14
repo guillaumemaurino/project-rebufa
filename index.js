@@ -16,6 +16,10 @@ app.use(express.static('./public'));
 mongoose.connect('mongodb://localhost/ninjago');
 mongoose.Promise = global.Promise;
 
+// Setting debug to true
+mongoose.set('debug', false);
+console.log("Mongoose debug mode disabled.")
+
 // use the body parser before the routes
 app.use(bodyParser.json());
 
@@ -39,7 +43,7 @@ app.get('/map', function(req, res){
 });
 
 app.get('/routes', function(req, res){
-	res.render('routes');
+	res.render('routes', {search: req.query.search});
 });
 
 app.get('/test', function(req, res){
@@ -55,5 +59,5 @@ app.listen(process.env.port || 4000, function(){
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
-		// algolia.algolia_setting();
+		algolia.algolia_setting();
 });
