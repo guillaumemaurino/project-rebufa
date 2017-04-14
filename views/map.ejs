@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title> Rebufa map </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
-  </head>
+    <% include partial/head.ejs %>
   <body>
     <% include partial/nav.ejs %>
+    <% include partial/background.ejs %>
+
 
     <!-- Page content -->
-    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+    <!-- Page content -->
+    <div class="main">
+      <div class="container tim-container" style="max-width:800px; padding-top:100px">
+
       <h1>Test map for antoine</h1>
       <div class="aa-input-container" id="aa-input-container">
           <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for outings or routes..." name="search" autocomplete="off" />
@@ -31,7 +28,8 @@
       <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
       <script src="map.js"></script>
     </div>
-    
+  </div>
+
 
     <!-- Add Google Maps -->
     <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>

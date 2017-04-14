@@ -46,7 +46,7 @@ app.get('/routes', function(req, res){
 	res.render('routes', {search: req.query.search});
 });
 
-app.get('/test', function(req, res){
+app.get('/test_style', function(req, res){
 	res.render('test_style');
 });
 
@@ -59,5 +59,5 @@ app.listen(process.env.port || 4000, function(){
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
-		algolia.algolia_setting();
+		// algolia.algolia_setting();
 });
