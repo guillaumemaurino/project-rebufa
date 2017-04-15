@@ -55,7 +55,7 @@ app.listen(process.env.port || 4000, function(){
 	console.log('Now listening for requests');
 
     // Launch c2c initialization functions.
-    // c2c.c2c_init_latest_outing();
+     c2c.c2c_init_latest_outing();
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
