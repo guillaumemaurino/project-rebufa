@@ -2,24 +2,33 @@ module.exports = function(app, passport) {
 
 // normal routes ===============================================================
     app.get('/', function(req, res){
-    	res.render('home');
+      res.render('home', {
+          user : req.user
+      });
     });
 
     app.get('/map', function(req, res){
-    	res.render('map');
+      res.render('map', {
+          user : req.user
+      });
     });
 
     app.get('/routes', function(req, res){
-    	res.render('routes', {search: req.query.search});
+    	res.render('routes', {
+        search: req.query.search,
+        user: req.user
+      });
     });
 
     app.get('/test_style', function(req, res){
-    	res.render('test_style');
+      res.render('test_style', {
+          user : req.user
+      });
     });
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
+        res.render('profile', {
             user : req.user
         });
     });
@@ -44,7 +53,7 @@ module.exports = function(app, passport) {
     // facebook -------------------------------
 
     // send to facebook to do the authentication
-    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['user_friends', 'email'] }));
 
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
@@ -103,7 +112,7 @@ module.exports = function(app, passport) {
     // facebook -------------------------------
     app.get('/unlink/facebook', isLoggedIn, function(req, res) {
         var user            = req.user;
-        user.facebook.token = undefined;
+        user.token = undefined;
         user.save(function(err) {
             res.redirect('/profile');
         });
@@ -112,12 +121,12 @@ module.exports = function(app, passport) {
     // google ---------------------------------
       app.get('/unlink/google', isLoggedIn, function(req, res) {
           var user          = req.user;
-          user.google.token = undefined;
+          user.token = undefined;
           user.save(function(err) {
               res.redirect('/profile');
           });
       });
-      
+
 };
 
 // route middleware to ensure user is logged in

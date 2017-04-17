@@ -35,70 +35,43 @@ module.exports = function(passport) {
     passport.use(new FacebookStrategy(fbStrategy,
     function(req, token, refreshToken, profile, done) {
 
+      console.log('facebook profile - debug');
+      console.log(profile);
         // asynchronous
         process.nextTick(function() {
-
             // check if the user is already logged in
             if (!req.user) {
-
-                User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
+              var fb_email = (profile.emails[0].value || '').toLowerCase()
+                User.findOne({ 'email' : fb_email}, function(err, user) {
                     if (err)
                         return done(err);
+                    if (!user){
+                      console.log('Creating new User with facebook.')
+                      user = new User();
+                      user.external_id    = profile.id;
+                      user.provider = profile.provider;
+                    }
+                    if (user && user.provider == 'facebook') {
+                        // if there is a user id already
+                        console.log('User already existing, we do an update');
+                        user.token = token;
+                        user.name  = profile.displayName ? profile.displayName : profile.name.givenName + ' ' + profile.name.familyName;
+                        user.email = fb_email;
+                        user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
 
-                    if (user) {
-
-                        // if there is a user id already but no token (user was linked at one point and then removed)
-                        if (!user.facebook.token) {
-                            user.facebook.token = token;
-                            user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                            user.facebook.email = (profile.emails[0].value || '').toLowerCase();
-
-                            user.save(function(err) {
-                                if (err)
-                                    return done(err);
-
-                                return done(null, user);
-                            });
-                        }
-
-                        return done(null, user); // user found, return that user
-                    } else {
-                        // if there is no user, create them
-                        var newUser            = new User();
-
-                        newUser.facebook.id    = profile.id;
-                        newUser.facebook.token = token;
-                        newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                        newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
-
-                        newUser.save(function(err) {
+                        user.save(function(err) {
                             if (err)
                                 return done(err);
 
-                            return done(null, newUser);
+                            return done(null, user);
                         });
                     }
+                    else{
+                      console.log('User already existing but not login with facebook. Should warn the user.')
+                    }
                 });
-
-            } else {
-                // user already exists and is logged in, we have to link accounts
-                var user            = req.user; // pull the user out of the session
-
-                user.facebook.id    = profile.id;
-                user.facebook.token = token;
-                user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                user.facebook.email = (profile.emails[0].value || '').toLowerCase();
-
-                user.save(function(err) {
-                    if (err)
-                        return done(err);
-
-                    return done(null, user);
-                });
-
             }
         });
-
     }));
 
     // =========================================================================
@@ -113,24 +86,30 @@ module.exports = function(passport) {
 
     },
     function(req, token, refreshToken, profile, done) {
-
+      console.log('google profile - debug');
+      console.log(profile);
         // asynchronous
         process.nextTick(function() {
 
             // check if the user is already logged in
             if (!req.user) {
-
-                User.findOne({ 'google.id' : profile.id }, function(err, user) {
+                var google_email = (profile.emails[0].value || '').toLowerCase()
+                User.findOne({ 'email' : google_email }, function(err, user) {
                     if (err)
                         return done(err);
-
-                    if (user) {
-
-                        // if there is a user id already but no token (user was linked at one point and then removed)
-                        if (!user.google.token) {
-                            user.google.token = token;
-                            user.google.name  = profile.displayName;
-                            user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                    if (!user){
+                      console.log('Creating new User with google.')
+                      user = new User();
+                      user.external_id    = profile.id;
+                      user.provider = profile.provider;
+                    }
+                    if (user && user.provider == 'google') {
+                        // if there is a user id already
+                        console.log('User already existing, we do an update');
+                            user.token = token;
+                            user.name  = profile.displayName;
+                            user.email = google_email; // pull the first email
+                            user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
 
                             user.save(function(err) {
                                 if (err)
@@ -139,43 +118,11 @@ module.exports = function(passport) {
                                 return done(null, user);
                             });
                         }
-
-                        return done(null, user);
-                    } else {
-                        var newUser          = new User();
-
-                        newUser.google.id    = profile.id;
-                        newUser.google.token = token;
-                        newUser.google.name  = profile.displayName;
-                        newUser.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
-
-                        newUser.save(function(err) {
-                            if (err)
-                                return done(err);
-
-                            return done(null, newUser);
-                        });
-                    }
+                        else{
+                          console.log('User already existing but not login with google. Should warn the user.')
+                        }
                 });
-
-            } else {
-                // user already exists and is logged in, we have to link accounts
-                var user               = req.user; // pull the user out of the session
-
-                user.google.id    = profile.id;
-                user.google.token = token;
-                user.google.name  = profile.displayName;
-                user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
-
-                user.save(function(err) {
-                    if (err)
-                        return done(err);
-
-                    return done(null, user);
-                });
-
             }
-
         });
 
     }));
