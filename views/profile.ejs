@@ -9,38 +9,25 @@
     <!-- Page content -->
     <div class="main">
       <div class="container tim-container" style="max-width:800px; padding-top:100px">
-
-        <div class="page-header text-center">
-            <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-        </div>
-        <div class="row">
-
-          <!-- FACEBOOK INFORMATION -->
-          <div class="col-sm-6">
-              <div class="well">
-                  <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
-
-                  <!-- check if the user has this token (is the user authenticated with this social account) -->
-                  <% if (user.facebook.token) { %>
-                      <p>
-                          <strong>id</strong>: <%= user.facebook.id %><br>
-                          <strong>token</strong>: <%= user.facebook.token %><br>
-                          <strong>email</strong>: <%= user.facebook.email %><br>
-                          <strong>name</strong>: <%= user.facebook.name %><br>
-                      </p>
-
-                      <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
-                  <% } else { %>
-                      <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
-                  <% } %>
-
+        <div id="typography">
+          <h1><span class="tim-note">Profile</h1>
+            <% if (typeof user == 'object' && user) { %>
+              <% if (user.provider == 'facebook') { %>
+              <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+              <% } else if (user.provider == 'google') {  %>
+                <h3 class="text-primary"><span class="fa fa-google"></span> Google</h3>
+                <% } %>
+              <div class="row">
+                  <div class="tim-typo"><p><span class="tim-note">id</span><%= user.external_id %></p></div>
+                  <div class="tim-typo"><p><span class="tim-note">display name</span><%= user.name %></p></div>
+                  <div class="tim-typo"><p><span class="tim-note">token</span><%= user.token %></p></div>
+                  <div class="tim-typo"><p><span class="tim-note">email</span><%= user.email %></p></div>
+                  <div class="tim-typo"><p><span class="tim-note">photo</span><small><%= user.photo %></small></p></div>
               </div>
+              <% } %>
           </div>
         </div>
-
-        </div>
-      </div>
-
+    </div>
   </body>
   <% include partial/footer.ejs %>
 </html>

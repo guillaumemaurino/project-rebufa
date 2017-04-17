@@ -5,7 +5,7 @@
    <!--
        navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange
        -->
-       <nav class="navbar navbar-ct-orange navbar-transparent navbar-fixed-top" role="navigation">
+       <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
          <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
@@ -47,8 +47,33 @@
                 </div>
              </form>
              <ul class="nav navbar-nav navbar-right">
-                   <li><a href="/login" class="btn btn-round btn-default">Login</a></li>
-                   <li><a href="/logout" class="btn btn-round btn-default">Logout</a></li>
+
+               <% if (typeof user == 'object' && user) { %>
+                 <li class="dropdown">
+                   <div class="logo-container">
+                     <div class="logo">
+                       <img src="<%= user.photo %>">
+                     </div>
+                     <div class="navbar-brand">
+                       <%= user.name %>
+                     </div>
+                   </div>
+                       <a href="#gsdk" class="dropdown-toggle" data-toggle="dropdown">
+                      </a>
+                       <ul class="dropdown-menu">
+                         <li><a href="/logout">Logout</a></li>
+                         <li><a href="/profile">Profile</a></li>
+                         <li><a href="#gsdk">Something</a></li>
+                         <li><a href="#gsdk">Another action</a></li>
+                         <li><a href="#gsdk">Something</a></li>
+                         <li class="divider"></li>
+                         <li><a href="#gsdk">Separated link</a></li>
+                       </ul>
+                 </li>
+               <% } else { %>
+                <li><a href="/login" class="btn btn-round btn-default">Login</a></li>
+               <% } %>
+
               </ul>
            </div><!-- /.navbar-collapse -->
        </div><!-- /.container-fluid -->
