@@ -9,8 +9,19 @@
     <!-- Page content -->
     <div class="main">
       <div class="container tim-container" style="max-width:800px; padding-top:100px">
+
         <div id="typography">
-          <h1><span class="tim-note">Profile</h1>
+          <div class="col-md-4 col-sm-6">
+            <img src="<%= user.photo %>" alt="Thumbnail Image" class="img-thumbnail">
+
+          </div>
+          <h1><span class="tim-note">Profile</h1></span>
+
+          <button href="#Foo" type="button" class="btn btn-default" aria-label="Edit profile" data-toggle="collapse">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+          </button>
+          <div class="space"></div>
+
             <% if (typeof user == 'object' && user) { %>
               <% if (user.provider == 'facebook') { %>
               <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
@@ -22,12 +33,32 @@
                   <div class="tim-typo"><p><span class="tim-note">display name</span><%= user.name %></p></div>
                   <div class="tim-typo"><p><span class="tim-note">token</span><%= user.token %></p></div>
                   <div class="tim-typo"><p><span class="tim-note">email</span><%= user.email %></p></div>
-                  <div class="tim-typo"><p><span class="tim-note">photo</span><small><%= user.photo %></small></p></div>
+
+
+                  <div id="Foo" class="collapse">
+                    <h1><span class="tim-note">Edit Profile</h1></span>
+                    <div class="tim-typo">
+                      <p><span class="tim-note">display name</span>
+                        <div class="form-group">
+                          <input type="text" id="change_name_input" value="" placeholder="<%= user.name %>" class="form-control" onkeydown="change_name('<%= user._id %>')"/>
+                        </div>
+                      </p>
+                    </div>
+                  </div>
               </div>
               <% } %>
           </div>
         </div>
     </div>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+    <!-- Create React Component -->
+    <div id="app"></div>
+    <script type="text/babel" src="profile.js"></script>
+
   </body>
   <% include partial/footer.ejs %>
 </html>

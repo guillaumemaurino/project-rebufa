@@ -26,11 +26,17 @@ const app = express();
 // Set up controler
 app.set('view engine', 'ejs');
 
+// first midelware
+app.use(express.static('./public'));
 // set up our express application
 // app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
-app.use(bodyParser.urlencoded({ extended: true }));
+
+// Initialize the routes that are setup in api;
+app.use('/api',require('./routes/api'));
+
+//app.use(bodyParser.urlencoded({ extended: true }));
 // required for passport
 app.use(session({
     secret: 'ilovescotchscotchyscotchscotch', // session secret
@@ -40,21 +46,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
-
-
-// first midelware
-app.use(express.static('./public'));
-// use the body parser before the routes
-app.use(bodyParser.json());
-// Initialize the routes that are setup in api;
-app.use('/api',require('./routes/api'));
-// 3rd midelware is the error handling
-app.use(function(err, req, res, next){
-	//console.log(err);
-	res.status(422).send({
-		error : err.message
-	});
-});
 
 // routes ======================================================================
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
