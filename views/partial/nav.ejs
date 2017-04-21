@@ -4,7 +4,8 @@
    <div id="navbar">
    <!--
        navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange
-       -->
+        navbar-default navbar-transparent
+      navbar navbar-default navbar-transparent-->
        <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
          <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,20 +59,20 @@
                        <%= user.name %>
                      </div>
                    </div>
-                       <a href="#gsdk" class="dropdown-toggle" data-toggle="dropdown">
-                      </a>
-                       <ul class="dropdown-menu">
-                         <li><a href="/logout">Logout</a></li>
-                         <li><a href="/profile">Profile</a></li>
-                         <li><a href="#gsdk">Something</a></li>
-                         <li><a href="#gsdk">Another action</a></li>
-                         <li><a href="#gsdk">Something</a></li>
-                         <li class="divider"></li>
-                         <li><a href="#gsdk">Separated link</a></li>
-                       </ul>
+                   <a href="#gsdk" class="dropdown-toggle" data-toggle="dropdown"></a>
+                   <ul class="dropdown-menu">
+                     <li><a href="/logout">Logout</a></li>
+                     <li><a href="/profile">Profile</a></li>
+                   </ul>
                  </li>
                <% } else { %>
-                <li><a href="/login" class="btn btn-round btn-default">Login</a></li>
+                 <li class="dropdown">
+                   <a href="#gsdk" class="btn btn-round btn-default" data-toggle="dropdown">Login</a>
+                   <ul class="dropdown-menu">
+                     <li><a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a></li>
+                     <li><a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google+</a></li>
+                   </ul>
+                 </li>
                <% } %>
 
               </ul>

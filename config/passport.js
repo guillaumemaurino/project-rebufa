@@ -36,7 +36,7 @@ module.exports = function(passport) {
     function(req, token, refreshToken, profile, done) {
 
       console.log('facebook profile - debug');
-      console.log(profile);
+      //console.log(profile);
         // asynchronous
         process.nextTick(function() {
             // check if the user is already logged in
@@ -55,9 +55,10 @@ module.exports = function(passport) {
                         // if there is a user id already
                         console.log('User already existing, we do an update');
                         user.token = token;
-                        user.name  = profile.displayName ? profile.displayName : profile.name.givenName + ' ' + profile.name.familyName;
                         user.email = fb_email;
-                        user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
+                        // GMAURINO for now if the user already exist we do not udpate the name & picture.
+                        //user.name  = profile.displayName ? profile.displayName : profile.name.givenName + ' ' + profile.name.familyName;
+                        //user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
 
                         user.save(function(err) {
                             if (err)
@@ -87,7 +88,7 @@ module.exports = function(passport) {
     },
     function(req, token, refreshToken, profile, done) {
       console.log('google profile - debug');
-      console.log(profile);
+      //console.log(profile);
         // asynchronous
         process.nextTick(function() {
 
@@ -107,9 +108,10 @@ module.exports = function(passport) {
                         // if there is a user id already
                         console.log('User already existing, we do an update');
                             user.token = token;
-                            user.name  = profile.displayName;
                             user.email = google_email; // pull the first email
-                            user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
+                            // For now we do not update the dsplay name any more
+                            // user.name  = profile.displayName;
+                            // user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
 
                             user.save(function(err) {
                                 if (err)

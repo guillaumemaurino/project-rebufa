@@ -1,31 +1,5 @@
 module.exports = function(app, passport) {
 
-// normal routes ===============================================================
-    app.get('/', function(req, res){
-      res.render('home', {
-          user : req.user
-      });
-    });
-
-    app.get('/map', function(req, res){
-      res.render('map', {
-          user : req.user
-      });
-    });
-
-    app.get('/routes', function(req, res){
-    	res.render('routes', {
-        search: req.query.search,
-        user: req.user
-      });
-    });
-
-    app.get('/test_style', function(req, res){
-      res.render('test_style', {
-          user : req.user
-      });
-    });
-
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
         res.render('profile', {
@@ -33,25 +7,7 @@ module.exports = function(app, passport) {
         });
     });
 
-    // LOGOUT ==============================
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
-
-// =============================================================================
-// AUTHENTICATE (FIRST LOGIN) ==================================================
-// =============================================================================
-
-    // locally --------------------------------
-    // LOGIN ===============================
-    // show the login form
-    app.get('/login', function(req, res) {
-        res.render('login', { message: req.flash('loginMessage') });
-    });
-
     // facebook -------------------------------
-
     // send to facebook to do the authentication
     app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['user_friends', 'email'] }));
 
@@ -111,7 +67,7 @@ module.exports = function(app, passport) {
 
     // facebook -------------------------------
     app.get('/unlink/facebook', isLoggedIn, function(req, res) {
-        var user            = req.user;
+        var user = req.user;
         user.token = undefined;
         user.save(function(err) {
             res.redirect('/profile');
@@ -126,13 +82,11 @@ module.exports = function(app, passport) {
               res.redirect('/profile');
           });
       });
-
-};
-
-// route middleware to ensure user is logged in
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
+      // route middleware to ensure user is logged in
+      function isLoggedIn(req, res, next) {
+        if (req.isAuthenticated())
         return next();
 
-    res.redirect('/');
-}
+        res.redirect('/');
+      }
+};

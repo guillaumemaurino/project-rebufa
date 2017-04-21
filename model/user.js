@@ -7,7 +7,9 @@ var userSchema = mongoose.Schema({
       email        : String,
       name         : String,
       provider     : String,
-      photo        : String
+      photo        : String,
+      background   : String,
+      summary      : String
 });
 
 // create the model for users and expose it to our app

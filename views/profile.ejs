@@ -4,39 +4,37 @@
 
   <body>
   <% include partial/nav.ejs %>
-  <% include partial/background.ejs %>
+
+    <div class='blurred-container'>
+        <div class="img-src" style="background-image: url('<%= user.background %>')"></div>
+    </div>
+
 
     <!-- Page content -->
     <div class="main">
       <div class="container tim-container" style="max-width:800px; padding-top:100px">
-
         <div id="typography">
           <div class="col-md-4 col-sm-6">
             <img src="<%= user.photo %>" alt="Thumbnail Image" class="img-thumbnail">
 
           </div>
-          <h1><span class="tim-note">Profile</h1></span>
+          <h2><span class="tim-note"><%= user.name %></h2></span>
+          <p class="text-muted"><%= user.summary %></p>
 
           <button href="#Foo" type="button" class="btn btn-default" aria-label="Edit profile" data-toggle="collapse">
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
           </button>
+
           <div class="space"></div>
-
-            <% if (typeof user == 'object' && user) { %>
-              <% if (user.provider == 'facebook') { %>
-              <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
-              <% } else if (user.provider == 'google') {  %>
-                <h3 class="text-primary"><span class="fa fa-google"></span> Google</h3>
-                <% } %>
-              <div class="row">
-                  <div class="tim-typo"><p><span class="tim-note">id</span><%= user.external_id %></p></div>
-                  <div class="tim-typo"><p><span class="tim-note">display name</span><%= user.name %></p></div>
-                  <div class="tim-typo"><p><span class="tim-note">token</span><%= user.token %></p></div>
-                  <div class="tim-typo"><p><span class="tim-note">email</span><%= user.email %></p></div>
-
-
+              <div id='success' class="row">
                   <div id="Foo" class="collapse">
                     <h1><span class="tim-note">Edit Profile</h1></span>
+                    <% if (user.provider == 'facebook') { %>
+                      <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+                      <% } else if (user.provider == 'google') {  %>
+                        <h3 class="text-primary"><span class="fa fa-google"></span> Google</h3>
+                        <% } %>
+                    <div class="tim-typo"><p><span class="tim-note">email</span><%= user.email %></p></div>
                     <div class="tim-typo">
                       <p><span class="tim-note">display name</span>
                         <div class="form-group">
@@ -44,9 +42,35 @@
                         </div>
                       </p>
                     </div>
+                    <div class="tim-typo">
+                      <p><span class="tim-note">Summary</span>
+                        <div class="form-group">
+                          <input type="text" id="change_summary_input" value="" placeholder="<%= user.summary %>" class="form-control" onkeydown="change_summary('<%= user._id %>')"/>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="tim-typo">
+                      <p><span class="tim-note">Profile picture</span>
+                        <div class="form-group">
+                          <form action="/profile/picture" method="POST" enctype="multipart/form-data">
+                            <input class="btn btn-default" type="file" name="avatar">
+                            <input class="btn btn-default" type="submit" value="submit">
+                          </form>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="tim-typo">
+                      <p><span class="tim-note">Background picture</span>
+                        <div class="form-group">
+                          <form action="/profile/background" method="POST" enctype="multipart/form-data">
+                            <input class="btn btn-default" type="file" name="avatar">
+                            <input class="btn btn-default" type="submit" value="submit">
+                          </form>
+                        </div>
+                      </p>
+                    </div>
                   </div>
               </div>
-              <% } %>
           </div>
         </div>
     </div>

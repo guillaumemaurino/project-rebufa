@@ -10,6 +10,7 @@ const bodyParser   = require('body-parser');
 const session      = require('express-session');
 const configDB = require('./config/database.js');
 const port     = process.env.PORT || 8080;
+const Grid = require("gridfs-stream");
 
 // Connect to mongoDB
 mongoose.connect(configDB.url);
@@ -17,6 +18,11 @@ mongoose.Promise = global.Promise;
 // Setting debug to true
 mongoose.set('debug', false);
 console.log("Mongoose debug mode disabled.")
+
+// Setting mongoose connection;
+const connection = mongoose.connection;
+// Dont know what this is.
+Grid.mongo = mongoose.mongo;
 
 // Pass passport for configuration
 require('./config/passport')(passport);
@@ -33,10 +39,6 @@ app.use(express.static('./public'));
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 
-// Initialize the routes that are setup in api;
-app.use('/api',require('./routes/api'));
-
-//app.use(bodyParser.urlencoded({ extended: true }));
 // required for passport
 app.use(session({
     secret: 'ilovescotchscotchyscotchscotch', // session secret
@@ -47,12 +49,20 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-// routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+connection.once("open", function(){
+  var gfs = Grid(connection.db);
+  // routes ======================================================================
+  require('./routes/routes.js')(app); // load classic routes 
+  require('./routes/login.js')(app, passport) // Load all the routes for the login. using Passport.
+  require('./routes/files.js')(app, gfs); // load our routes and pass in our app and fully configured passport
+
+});
 
 // Listen for request
-app.listen(port, function(){
-	console.log('Now listening for requests on port ' + port);
+if (!module.parent) {
+
+  app.listen(port, function(){
+	   console.log('Now listening for requests on port ' + port);
 
     // Launch c2c initialization functions.
     // c2c.c2c_init_latest_outing();
@@ -60,4 +70,5 @@ app.listen(port, function(){
     // Launch algolia initialization functions.
     // algolia.algolia_init();
 		// algolia.algolia_setting();
-});
+  });
+}
