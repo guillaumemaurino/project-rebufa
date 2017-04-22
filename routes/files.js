@@ -27,26 +27,9 @@ module.exports = function(app, gfs) {
   	});
   });
 
-
-    // Update request of existing user for the summary line
-    app.put('/users_summary', function(req, res, next){
-      console.log('PUT users summary request');
-      var new_user = req.user;
-      console.log(req.user);
-      if (new_user){
-        console.log(req.body);
-        new_user.summary = req.body.summary;
-        User.findByIdAndUpdate({_id: new_user.id}, new_user).then(function(){
-          // we do a get
-          User.findOne({_id: new_user.id}).then(function(user){
-            res.send(user);
-          });
-        });
-      }
-    });
-
   //second parameter is multer middleware.
   app.post("/profile/picture", upload.single("avatar"), function(req, res, next){
+    console.log('User profile picture change called.')
     //create a gridfs-stream into which we pipe multer's temporary file saved in uploads. After which we delete multer's temp file.
     var writestream = gfs.createWriteStream({
       filename: req.file.originalname
@@ -60,15 +43,23 @@ module.exports = function(app, gfs) {
           // Try to get the user
           var new_user = req.user;
           if (new_user){
-            new_user.photo = '/files/' + writestream.id;
-            User.findByIdAndUpdate({_id: req.user.id}, new_user).then(function(){
-          		// we do a get
-          		User.findOne({_id: req.user.id}).then(function(user){
-          			//res.send(user
-                res.redirect('/profile');
-          		});
-          	});
-          }
+            // We should delete the previous file if we can.
+            req.params.file_id = new_user.photo.file_id;
+            delete_file(req, res, next);
+              new_user.photo = {
+                file_id : writestream.id,
+                url     : '/files/' + writestream.id
+              };
+              User.findByIdAndUpdate({_id: req.user.id}, new_user).then(function(){
+                // we do a get
+                User.findOne({_id: req.user.id}).then(function(user){
+                  //res.send(user
+                  console.log('User information updated with new profile picture')
+                  res.redirect('/profile');
+                });
+              });
+
+          }// end of if condition
         })
       })
       .on("data", function(data) {
@@ -94,7 +85,13 @@ module.exports = function(app, gfs) {
           // Try to get the user
           var new_user = req.user;
           if (new_user){
-            new_user.background = '/files/' + writestream.id;
+            // We should delete the previous file if we can.
+            req.params.file_id = new_user.background.file_id;
+            delete_file(req, res, next);
+            new_user.background = {
+              file_id : writestream.id,
+              url     : '/files/' + writestream.id
+            };
             User.findByIdAndUpdate({_id: req.user.id}, new_user).then(function(){
               // we do a get
               User.findOne({_id: req.user.id}).then(function(user){
@@ -124,18 +121,27 @@ module.exports = function(app, gfs) {
   });
 
   //delete the image
-  app.get("/delete/:file_id", function(req, res){
-    gfs.exist({_id: req.params.file_id}, function(err, found){
+  app.get("/delete/:file_id", function(req, res, next){
+    delete_file(req, res, next);
+  });
+
+  function delete_file(req, res, next){
+    var file_id = req.params.file_id;
+    console.log("deleting file called.")
+    console.log(req.params);
+    gfs.exist({_id: file_id}, function(err, found){
       if(err) return res.send("Error occured");
       if(found){
-        gfs.remove({_id: req.params.file_id}, function(err){
+        gfs.remove({_id: file_id}, function(err){
           if(err) return res.send("Error occured");
-          res.send("Image deleted!");
+          console.log("Image deleted!");
+          //res.writeContinue();
         });
       } else{
-        res.send("No image found with that title");
+        console.log("No image found with that title");
+        //res.writeContinue();
       }
     });
-  });
+  }
 
 };

@@ -6,7 +6,7 @@
   <% include partial/nav.ejs %>
 
     <div class='blurred-container'>
-        <div class="img-src" style="background-image: url('<%= user.background %>')"></div>
+        <div class="img-src" style="background-image: url(<%= user.background.url %>)"></div>
     </div>
 
 
@@ -15,7 +15,7 @@
       <div class="container tim-container" style="max-width:800px; padding-top:100px">
         <div id="typography">
           <div class="col-md-4 col-sm-6">
-            <img src="<%= user.photo %>" alt="Thumbnail Image" class="img-thumbnail">
+            <img src="<%= user.photo.url %>" alt="Thumbnail Image" class="img-thumbnail">
 
           </div>
           <h2><span class="tim-note"><%= user.name %></h2></span>
@@ -38,14 +38,14 @@
                     <div class="tim-typo">
                       <p><span class="tim-note">display name</span>
                         <div class="form-group">
-                          <input type="text" id="change_name_input" value="" placeholder="<%= user.name %>" class="form-control" onkeydown="change_name('<%= user._id %>')"/>
+                          <input type="text" id="change_name_input" value="" placeholder="<%= user.name %>" class="form-control" onkeydown="change_profile('<%= user._id %>')"/>
                         </div>
                       </p>
                     </div>
                     <div class="tim-typo">
                       <p><span class="tim-note">Summary</span>
                         <div class="form-group">
-                          <input type="text" id="change_summary_input" value="" placeholder="<%= user.summary %>" class="form-control" onkeydown="change_summary('<%= user._id %>')"/>
+                          <input type="text" id="change_summary_input" value="" placeholder="<%= user.summary %>" class="form-control" onkeydown="change_profile('<%= user._id %>')"/>
                         </div>
                       </p>
                     </div>

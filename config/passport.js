@@ -50,6 +50,11 @@ module.exports = function(passport) {
                       user = new User();
                       user.external_id    = profile.id;
                       user.provider = profile.provider;
+                      var photo_url = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
+                      user.photo = {
+                        file_id : "",
+                        url     : photo_url
+                      };
                     }
                     if (user && user.provider == 'facebook') {
                         // if there is a user id already
@@ -58,8 +63,6 @@ module.exports = function(passport) {
                         user.email = fb_email;
                         // GMAURINO for now if the user already exist we do not udpate the name & picture.
                         //user.name  = profile.displayName ? profile.displayName : profile.name.givenName + ' ' + profile.name.familyName;
-                        //user.photo = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
-
                         user.save(function(err) {
                             if (err)
                                 return done(err);
@@ -103,6 +106,11 @@ module.exports = function(passport) {
                       user = new User();
                       user.external_id    = profile.id;
                       user.provider = profile.provider;
+                      var photo_url = profile.photos ? profile.photos[0].value : '/img/faces/unknown-user-pic.jpg';
+                      user.photo = {
+                        file_id : "",
+                        url     : photo_url
+                      };
                     }
                     if (user && user.provider == 'google') {
                         // if there is a user id already

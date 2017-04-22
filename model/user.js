@@ -7,8 +7,14 @@ var userSchema = mongoose.Schema({
       email        : String,
       name         : String,
       provider     : String,
-      photo        : String,
-      background   : String,
+      photo        : {
+        file_id   : String,
+        url       : String
+      },
+      background   : {
+        file_id   : String,
+        url       : String
+      },
       summary      : String
 });
 
