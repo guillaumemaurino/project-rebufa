@@ -54,7 +54,7 @@ connection.once("open", function(){
   // routes ======================================================================
   require('./routes/routes.js')(app); // load classic routes 
   require('./routes/login.js')(app, passport) // Load all the routes for the login. using Passport.
-  require('./routes/files.js')(app, gfs); // load our routes and pass in our app and fully configured passport
+  require('./routes/files.js')(app, gfs); // load our routes and pass in our app and fully configured passport.
 
 });
 
