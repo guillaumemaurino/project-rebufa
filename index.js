@@ -52,8 +52,10 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 connection.once("open", function(){
   var gfs = Grid(connection.db);
   // routes ======================================================================
-  require('./routes/routes.js')(app); // load classic routes 
-  require('./routes/login.js')(app, passport) // Load all the routes for the login. using Passport.
+  require('./routes/routes.js')(app); // load classic routes
+  require('./routes/outings.js')(app); // load routes used to post / delete / remove an outing.
+  var login = require('./routes/login.js');
+  login.login_init_routes(app, passport) // Load all the routes for the login. using Passport.
   require('./routes/files.js')(app, gfs); // load our routes and pass in our app and fully configured passport
 
 });
@@ -68,7 +70,7 @@ if (!module.parent) {
     // c2c.c2c_init_latest_outing();
 
     // Launch algolia initialization functions.
-    // algolia.algolia_init();
-		// algolia.algolia_setting();
+    //algolia.algolia_init();
+		//algolia.algolia_setting();
   });
 }
