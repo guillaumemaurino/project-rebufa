@@ -2,6 +2,7 @@
 const algoliasearch = require('algoliasearch');
 const Routes = require('../model/routes');
 const Outings = require('../model/outings');
+const Ski = require('../model/ski');
 
 const applicationID = 'TR971CJDWI';
 const apiKey = '4e93ff805c19864e7e343011ef3dc93c';
@@ -12,6 +13,7 @@ const client = algoliasearch(applicationID, apiKey);
 // We set up the index -> routes & outings.
 const index_routes = client.initIndex('routes');
 const index_outings = client.initIndex('outings');
+const index_ski = client.initIndex('ski');
 
 
 const algolia_init = function(){
@@ -26,6 +28,19 @@ const algolia_init = function(){
 		index_routes.addObjects(all_routes, function(err, content) {
 		  if (err) {console.error(err);}
 			else {console.log("All routes imported to Algolia.")}
+		});
+	});
+
+	Ski.find().then(function(all_skis) {
+		// We clear the index
+		index_ski.clearIndex(function(err) {
+		  if (err) {
+		    console.error(err);
+		  }
+		});
+		index_ski.addObjects(all_skis, function(err, content) {
+		  if (err) {console.error(err);}
+			else {console.log("All skis imported to Algolia.")}
 		});
 	});
 
@@ -44,27 +59,42 @@ const algolia_init = function(){
 	});
 }
 
+
 const algolia_setting = function() {
 	index_routes.setSettings({
-	  searchableAttributes: ['title,title_prefix','activities','summary'],
+	  searchableAttributes: ['title,title_prefix','activities','geometry','summary'],
 		attributesForFaceting: ['source', 'activities', 'global_rating']
 	});
 
+
+
+
 	console.log("Settings: routes done.")
+
+
 	index_routes.getSettings(function(err, content) {
 	  //console.log(content);
 	});
 
+	index_ski.setSettings({
+		searchableAttributes: ['_id','skiArea','Region'],
+		attributesForFaceting: ['_id','skiArea','Region']
+	});
+
+		console.log("Settings: ski done.")
+		index_ski.getSettings(function(err, content) {
+		  console.log(content);
+		});
+
 	index_outings.setSettings({
-		searchableAttributes: ['title,','participants','user_ids'],
+		searchableAttributes: ['title','conditions','participants','user_ids'],
 		attributesForFaceting: ['source', 'user_ids']
 	});
 
 	console.log("Settings: outings done.")
 	index_outings.getSettings(function(err, content) {
-		console.log(content);
+		//console.log(content);
 	});
-
 }
 
 module.exports.algolia_init = algolia_init;
