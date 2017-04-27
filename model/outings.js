@@ -28,10 +28,10 @@ const OutingSchema = new Schema({
     type: Date
   },
   route_ids: {
-    type: [String]
+    type: [mongoose.Schema.Types.ObjectId]
   },
   user_ids: {
-    type:[String]
+    type:[mongoose.Schema.Types.ObjectId]
   }
 });
 
