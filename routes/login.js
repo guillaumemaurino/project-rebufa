@@ -1,7 +1,10 @@
-module.exports = function(app, passport) {
+const utils = require('./utils.js')
+var exports = module.exports = {};
+
+exports.login_init_routes = function(app, passport) {
 
     // PROFILE SECTION =========================
-    app.get('/profile', isLoggedIn, function(req, res) {
+    app.get('/profile', utils.isLoggedIn, function(req, res) {
         res.render('profile', {
             user : req.user
         });
@@ -66,7 +69,7 @@ module.exports = function(app, passport) {
 // user account will stay active in case they want to reconnect in the future
 
     // facebook -------------------------------
-    app.get('/unlink/facebook', isLoggedIn, function(req, res) {
+    app.get('/unlink/facebook', utils.isLoggedIn, function(req, res) {
         var user = req.user;
         user.token = undefined;
         user.save(function(err) {
@@ -75,18 +78,11 @@ module.exports = function(app, passport) {
     });
 
     // google ---------------------------------
-      app.get('/unlink/google', isLoggedIn, function(req, res) {
+      app.get('/unlink/google', utils.isLoggedIn, function(req, res) {
           var user          = req.user;
           user.token = undefined;
           user.save(function(err) {
               res.redirect('/profile');
           });
       });
-      // route middleware to ensure user is logged in
-      function isLoggedIn(req, res, next) {
-        if (req.isAuthenticated())
-        return next();
-
-        res.redirect('/');
-      }
 };
