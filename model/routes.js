@@ -37,7 +37,11 @@ const RouteSchema = new Schema({
 	 global_rating: {
 		 type:String
 	 },
-	 geometry : Geo_route
+	 geometry : Geo_route,
+	 _geoloc : {
+    lat : {type: Number},
+    lng : {type: Number}
+  }
 });
 
 // Create the model & Add the schema

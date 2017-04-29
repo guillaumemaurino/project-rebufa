@@ -30,6 +30,15 @@ var c2c_init_latest_outing = function(){
 	});
 }
 
+var add_route_to_outing = function(outing, new_route){
+    Outings.findOne({_id: outing._id}).then(function(new_outing){
+      new_outing.route_ids.push(new_route._id);
+      Outings.findByIdAndUpdate({_id: outing._id}, new_outing).then(function(){
+        console.log("Route added to the outing");
+      });
+    });
+}
+
 var c2c_init_outing = function(document_id){
 	console.log("Get outing from c2c API " + document_id);
 	request.get(c2c_api + '/outings/' + document_id, function (err, res, body) {
@@ -47,19 +56,11 @@ var c2c_init_outing = function(document_id){
 			}
 			// We get the route id
 			var route_id = v_routes[id].document_id;
-			route_ids.push(route_id);
+			//route_ids.push(route_id);
 			// We are going to init the route
-			c2c_init_route(route_id);
-		}
-		// We get all the users
-		for (var id in v_users){
-			if (!v_users.hasOwnProperty(id)) {
-				//The current property is not a direct property of p
-				continue;
-			}
-			// We get the route id
-			var user_name = v_users[id].forum_username;
-			user_ids.push(user_name);
+			c2c_init_route(route_id, function(route){
+        console.log("GMAURINO TODO maybe add the route to the outing.");
+      });
 		}
 
 		if (locales != undefined && locales.length > 0){
@@ -72,10 +73,8 @@ var c2c_init_outing = function(document_id){
 				document_id: resultsObj.document_id,
 				source: "c2c",
 				date_start: resultsObj.date_start,
-				date_end: resultsObj.date_end,
-				route_ids: route_ids,
-				user_ids:user_ids
-			};
+				date_end: resultsObj.date_end
+      };
 			//console.log(c2c_init_outing);
 
 			var result = c2c_get_outing(resultsObj.document_id, function(res){
@@ -100,7 +99,7 @@ var c2c_init_outing = function(document_id){
 	});
 }
 
-var c2c_init_route = function(document_id) {
+var c2c_init_route = function(document_id, callback) {
 	request.get(c2c_api + '/routes/' + document_id, function (err, res, body) {
 	    if (!err) {
 	    	console.log("Init route from c2c API " + document_id);
@@ -129,6 +128,10 @@ var c2c_init_route = function(document_id) {
 		        	activities: resultsObj.activities,
 							global_rating: resultsObj.global_rating,
 							geometry: geometry,
+              _geoloc: {
+                lat: new_geo[1],
+                lng: new_geo[0]
+              },
 		        	source: "c2c"
 		        };
 
@@ -140,6 +143,7 @@ var c2c_init_route = function(document_id) {
 							// we do a get
 							Routes.findOne({_id: res._id}).then(function(route){
 								console.log("Route already existing : Update finished on " + route._id)
+                callback(route);
 							});
 						});
 	        		}
@@ -148,6 +152,7 @@ var c2c_init_route = function(document_id) {
 				        // Trying to create a new route
 				        Routes.create(c2c_init_route).then(function(route){
 								console.log("New route created : " + route._id);
+                callback(route);
 						});
 	        		}
 	        	});

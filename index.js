@@ -70,7 +70,7 @@ if (!module.parent) {
     // c2c.c2c_init_latest_outing();
 
     // Launch algolia initialization functions.
-    //algolia.algolia_init();
-		//algolia.algolia_setting();
+    // algolia.algolia_init();
+		// algolia.algolia_setting();
   });
 }
