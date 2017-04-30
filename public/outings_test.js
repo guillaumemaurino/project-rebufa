@@ -97,9 +97,9 @@ document.getElementById("icon-outing-close").addEventListener("click", function(
     input_outing.classList.remove("input-has-value");
 });
 
-function change_outing(outing_id) {
-  var change_outing_description = document.getElementById("change_outing_description");
-  var change_outing_conditions = document.getElementById("change_outing_conditions");
+function change_outing(outing_id, i) {
+  var change_outing_description = document.getElementById("change_outing_description" + i);
+  var change_outing_conditions = document.getElementById("change_outing_conditions" + i);
 
   if(event.keyCode == 13) {
     const ul = document.getElementById('outings_js');
@@ -138,7 +138,7 @@ function change_outing(outing_id) {
             .then(function(data) {
               console.log('Front end - put request result:')
               console.log(data);
-              location.reload();
+              //location.reload();
             })
             .catch(function(error) {
               console.log(error);

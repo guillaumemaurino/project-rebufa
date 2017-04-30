@@ -42,12 +42,12 @@
               <div id="edit_outing<%= i %>" class="collapse">
               <p><span class="tim-note">Description</span>
                 <div class="form-group">
-                  <input type="text" id="change_outing_description" value="" placeholder="<%= outings[i].description %>" class="form-control" onkeydown="change_outing('<%= outings[i]._id %>')"/>
+                  <input type="text" id="change_outing_description<%= [i] %>" value="" placeholder="<%= outings[i].description %>" class="form-control" onkeydown="change_outing('<%= outings[i]._id %>', '<%= [i] %>')"/>
                 </div>
               </p>
               <p><span class="tim-note">Conditions</span>
                 <div class="form-group">
-                  <input type="text" id="change_outing_conditions" value="" placeholder="<%= outings[i].conditions %>" class="form-control" onkeydown="change_outing('<%= outings[i]._id %>')"/>
+                  <input type="text" id="change_outing_conditions<%= [i] %>" value="" placeholder="<%= outings[i].conditions %>" class="form-control" onkeydown="change_outing('<%= outings[i]._id %>', '<%= [i] %>')"/>
                 </div>
               </p>
               <div class="aa-input-participants" id="aa-input-participants">
@@ -72,9 +72,11 @@
               <% if (outings[i].routes_information[j].summary != null) { %>
               <div class="panel-body">Route description : <%= outings[i].routes_information[j].summary %></div>
               <% } } } %>
-              <button href="#edit_outing<%= i %>" type="button" class="btn btn-default" aria-label="Edit outing" data-toggle="collapse">
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+              <a href="/edit_outings/<%= outings[i]._id %>">
+              <button href="/edit_outings/<%= outings[i]._id %>" type="button" class="btn btn-default" aria-label="Edit outing">Edit outing
+              <span  href="/edit_outings/<%= outings[i]._id %>" class="glyphicon glyphicon-edit" aria-hidden="true"></span>
               </button>
+                </a>
             </div>
           </div>
         	<% } %>
@@ -93,7 +95,6 @@
     <div id="app"></div>
     <script type="text/babel" src="outings_test.js"></script>
     <script type="text/babel" src="participants.js"></script>
-
   </body>
   <% include partial/footer.ejs %>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <% include partial/head.ejs %>
+
+  <body>
+  <% include partial/nav.ejs %>
+
+    <div class='blurred-container'>
+        <div class="img-src" style="background-image: url(<%= user.background.url %>)"></div>
+    </div>
+
+    <!-- Page content -->
+    <div class="main">
+      <div class="container tim-container" style="max-width:800px; padding-top:100px">
+        <div id="typography">
+          <h2><span class="tim-note"><%= user.name %></h2></span>
+          <p class="text-muted"><%= user.summary %></p>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapseFour">
+                  <%= outing.title %>
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+              <div class="panel-body"><%= outing.description %></div>
+            </div>
+          </div>
+          <div class="space"></div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <!-- Create React Component -->
+    <div id="app"></div>
+
+  </body>
+  <% include partial/footer.ejs %>
+</html>

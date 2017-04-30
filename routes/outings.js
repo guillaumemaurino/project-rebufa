@@ -2,6 +2,7 @@ const bodyParser   = require('body-parser');
 const Outings = require('../model/outings');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const utils = require('./utils.js')
+const mongoose = require('mongoose');
 
 module.exports = function(app){
 
@@ -57,13 +58,54 @@ module.exports = function(app){
 				}
     }], function (err, data){
 			if (err) throw err;
-			console.log(data);
+			//console.log(data);
 			res.render('outings', {
 				outings: data,
 				user: req.user
 			});
 		});
 	});
+
+
+		app.get('/edit_outings/:id' , utils.isLoggedIn, function(req, res){
+			// Getting data from mongo dg & pass it to the view
+			console.log('Getting specific outing called.')
+			console.log(req.params.id);
+			Outings.aggregate([
+				{$match:
+					{'_id': mongoose.Types.ObjectId(req.params.id)}
+				},
+				{
+					$unwind: "$route_ids",
+					$unwind: "$user_ids"
+				},
+				{
+					$lookup:
+					{
+						from: "routes",
+						localField: "route_ids",
+						foreignField: "_id",
+						as: "routes_information"
+					}
+				},
+				{
+					$lookup: {
+						from: "users",
+						localField: "user_ids",
+						foreignField: "_id",
+						as: "users_information"
+					}
+	    }], function (err, data){
+				if (err) throw err;
+				console.log(data.length);
+				if (data.length == 1)
+				res.render('outing_one', {
+					outing: data[0],
+					user: req.user
+				});
+			});
+		});
+//		{$match: {'items._id': {$in:[mongoose.Types.ObjectId('5140a09be5c703ac2c000002'), mongoose.Types.ObjectId('5140a09be5c703ac2c000003')]}} }
 
 	app.post('/outings' , utils.isLoggedIn , function(req, res){
 		// Get the data from the view & add it to the mongo db

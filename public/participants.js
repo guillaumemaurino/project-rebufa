@@ -54,7 +54,7 @@ function post_new_participants(suggestion){
   console.log(participants);
   $.ajax({
     type: 'POST',
-    url: '/participantss',
+    url: '/participants',
     data: JSON.stringify(participants),
     headers: {
         'Accept': 'application/json, text/plain, */*',
