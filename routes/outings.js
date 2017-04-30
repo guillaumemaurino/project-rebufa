@@ -5,9 +5,30 @@ const utils = require('./utils.js')
 
 module.exports = function(app){
 
+	app.get('/outings/:id', function(req, res, next){
+		console.log('GET outings by ID request');
+		Outings.findOne({_id: req.params.id}).then(function(outing){
+				res.send(outing);
+		});
+	});
+
+	// Update request of existing ninja
+	app.put('/outings/:id', function(req, res, next){
+		console.log('PUT outings request');
+		console.log(req.params.id);
+		console.log(req.body);
+		Outings.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+			// we do a get
+			Outings.findOne({_id: req.params.id}).then(function(outing){
+				res.send(outing);
+			});
+		});
+	});
+
+
 	app.get('/outings' , utils.isLoggedIn, function(req, res){
 		// Getting data from mongo dg & pass it to the view
-		console.log('Getting outings called.')
+		console.log('Getting outings for specific user called.')
 		var user_id = req.user._id;
 		console.log(user_id);
 		Outings.aggregate([
@@ -33,7 +54,7 @@ module.exports = function(app){
 					localField: "user_ids",
 					foreignField: "_id",
 					as: "users_information"
-				}	
+				}
     }], function (err, data){
 			if (err) throw err;
 			console.log(data);

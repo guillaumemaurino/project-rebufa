@@ -120,10 +120,12 @@ var c2c_init_route = function(document_id, callback) {
 							coordinates: new_geo,
 							type: route_location.type
 						};
+            var summary = locales[0].summary;
+            if (summary == null){summary = locales[0].description;}
 		        var c2c_init_route = {
 		        	title: locales[0].title,
 		        	title_prefix: locales[0].title_prefix,
-		        	summary: locales[0].summary,
+		        	summary: summary,
 		        	document_id: resultsObj.document_id,
 		        	activities: resultsObj.activities,
 							global_rating: resultsObj.global_rating,

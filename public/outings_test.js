@@ -22,7 +22,7 @@ var index_routes = client.initIndex('routes');
 var index_outings = client.initIndex('outings');
 
 //initialize autocomplete on search input (ID selector must match)
-autocomplete('#aa-search-input',
+autocomplete('#aa-search-outing',
   { hint: false },
   [
     {
@@ -37,11 +37,11 @@ autocomplete('#aa-search-input',
         }
     }
   }]).on('autocomplete:updated', function() {
-    if (searchInput.value.length > 0) {
-        inputContainer.classList.add("input-has-value");
+    if (search_outing.value.length > 0) {
+        input_outing.classList.add("input-has-value");
     }
     else {
-        inputContainer.classList.remove("input-has-value");
+        input_outing.classList.remove("input-has-value");
     }
 }).on('autocomplete:selected', function(event, suggestion, dataset) {
     //console.log(suggestion);
@@ -50,23 +50,23 @@ autocomplete('#aa-search-input',
 });;
 
 //DOM Binding
-var searchInput = document.getElementById("aa-search-input");
-var inputContainer = document.getElementById("aa-input-container");
+var search_outing = document.getElementById("aa-search-outing");
+var input_outing = document.getElementById("aa-input-outing");
 //Handle add/removing a class based on if text has been entered in the search input
 //attach custom event handler - autocomplete:updated triggers when dataset is rendered
 
 function new_outing_fire(){
-  // if the user press enter;
+  // if the outing press enter;
   if(event.keyCode == 13) {
         post_new_outing(undefined);
     }
 }
 
 function post_new_outing(suggestion){
-  console.log(searchInput.value);
+  console.log(search_outing.value);
   // we are going to created a post
   var outing = {
-    title: searchInput.value,
+    title: search_outing.value,
     route_ids : []
   };
   if (suggestion != undefined){
@@ -85,14 +85,67 @@ function post_new_outing(suggestion){
     },
     success: function(data){
       //do something with the data via front-end framework
-      //location.reload();
+      location.reload();
     }
   });
-  //window.location.href = 'routes' + '?q=' +  searchInput.value + '&hPP=10&idx=routes&p=0&is_v=1';
+  //window.location.href = 'routes' + '?q=' +  search_outing.value + '&hPP=10&idx=routes&p=0&is_v=1';
 }
 
 //Handle clearing the search input on close icon click
-document.getElementById("icon-close").addEventListener("click", function() {
-    searchInput.value = "";
-    inputContainer.classList.remove("input-has-value");
+document.getElementById("icon-outing-close").addEventListener("click", function() {
+    search_outing.value = "";
+    input_outing.classList.remove("input-has-value");
 });
+
+function change_outing(outing_id) {
+  var change_outing_description = document.getElementById("change_outing_description");
+  var change_outing_conditions = document.getElementById("change_outing_conditions");
+
+  if(event.keyCode == 13) {
+    const ul = document.getElementById('outings_js');
+    const url = '/outings/' + outing_id;
+    console.log(url);
+      var request = new Request(url, {
+        method: 'GET',
+        headers: new Headers()
+      });
+
+      // Now use it!
+      fetch(request)
+      .then((resp) => resp.json())
+      .then(function(data) {
+            console.log('Front end - get outing:')
+            console.log(data);
+            // Here we should do a put to update the name !!!!
+            if (change_outing_description.value != ""){
+              data.description = change_outing_description.value;
+              console.log('Changing outing descriptions');
+            }
+            if (change_outing_conditions.value != ""){
+              data.conditions = change_outing_conditions.value;
+              console.log('Changing outing conditions');
+            }
+            var request = new Request(url, {
+              method: 'PUT',
+              body: JSON.stringify( data ),
+              headers: {
+                  'Accept': 'application/json, text/plain, */*',
+                  'Content-Type': 'application/json'
+              }
+            });
+            fetch(request)
+            .then((resp) => resp.json())
+            .then(function(data) {
+              console.log('Front end - put request result:')
+              console.log(data);
+              location.reload();
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    }
+};
