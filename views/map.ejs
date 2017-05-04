@@ -2,58 +2,88 @@
 <html>
   <head>
     <% include partial/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="assets/css/map/styles.css">
+  </head>
   <body>
     <% include partial/nav.ejs %>
-    <% include partial/background.ejs %>
+        <header>
+      <h1>Airports - Geo Search</h1>
+      <a href="" class="change_page_state page_mode mode_button active" data-mode="bounding" data-state="rectangle">Bounding box</a>
+      <a href="" class="change_page_state page_mode mode_button" data-mode="around"   data-state="ip">Around a location</a>
+
+      <p class="page_mode active" data-mode="bounding">
+        A bounding box filters the scope of the results to a specified zone.<br>
+        This zone can be
+        <a href="" class="change_page_state state_link active" data-mode="bounding" data-state="rectangle">a rectangle</a>, or a
+        <a href="" class="change_page_state state_link" data-mode="bounding" data-state="polygon">a polygon</a>.
+      </p>
+      <p class="page_mode" data-mode="around">
+        Searching around a location can also rank the results by distance.<br>
+        It can be done via the
+        <a href="" class="change_page_state state_link" data-mode="around" data-state="ip">IP address</a>, or by providing the lat/lng of a point:
+        <a href="" class="change_page_state state_link" data-mode="around" data-state="nyc">NYC</a>,
+        <a href="" class="change_page_state state_link" data-mode="around" data-state="london">London</a>,
+        <a href="" class="change_page_state state_link" data-mode="around" data-state="sydney">Sydney</a>...
+      </p>
+    </header>
 
 
-    <!-- Page content -->
-    <!-- Page content -->
-    <div class="main">
-      <div class="container tim-container" style="max-width:800px; padding-top:100px">
-
-      <h1>Test map for antoine</h1>
-      <div class="aa-input-container" id="aa-input-container">
-          <input type="search" id="aa-search-input" class="aa-input-search" placeholder="Search for outings or routes..." name="search" autocomplete="off" />
-          <svg class="aa-input-icon" viewBox="654 -372 1664 1664">
-              <path d="M1806,332c0-123.3-43.8-228.8-131.5-316.5C1586.8-72.2,1481.3-116,1358-116s-228.8,43.8-316.5,131.5  C953.8,103.2,910,208.7,910,332s43.8,228.8,131.5,316.5C1129.2,736.2,1234.7,780,1358,780s228.8-43.8,316.5-131.5  C1762.2,560.8,1806,455.3,1806,332z M2318,1164c0,34.7-12.7,64.7-38,90s-55.3,38-90,38c-36,0-66-12.7-90-38l-343-342  c-119.3,82.7-252.3,124-399,124c-95.3,0-186.5-18.5-273.5-55.5s-162-87-225-150s-113-138-150-225S654,427.3,654,332  s18.5-186.5,55.5-273.5s87-162,150-225s138-113,225-150S1262.7-372,1358-372s186.5,18.5,273.5,55.5s162,87,225,150s113,138,150,225  S2062,236.7,2062,332c0,146.7-41.3,279.7-124,399l343,343C2305.7,1098.7,2318,1128.7,2318,1164z" />
-          </svg>
-          <svg class="aa-input-close" id="icon-close" viewBox="0 0 26 25">
-              <polygon points="26.2,23 15.4,12.5 26.2,2 23.9,-0.4 13,10.2 2.1,-0.4 -0.2,2 10.6,12.5 -0.2,23 2.1,25.4 13,14.8     23.9,25.4" />
-          </svg> <!-- Added SVG close icon -->
+    <!-- Hits and Map -->
+    <section class="map_section">
+      <div class="left-column">
+        <input id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Search by name, city, airport code..."/>
+        <div id="hits"></div>
       </div>
 
-      <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
-      <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-      <script src="map.js"></script>
-    </div>
-  </div>
+      <div class="right-column">
+        <div id="map"></div>
+      </div>
+
+      <div class="clear-both"></div>
+    </section>
+    <!-- /Hits and Map -->
 
 
-    <!-- Add Google Maps -->
-    <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
-    <script>
-    function myMap() {
-      myCenter=new google.maps.LatLng(41.878114, -87.629798);
-      var mapOptions= {
-        center:myCenter,
-        zoom:12, scrollwheel: false, draggable: false,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-      var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+    <!-- Footer -->
+    <footer>
+      Geo-Search demo -
+      Read the <a href="https://www.algolia.com/doc/geo-search/geo-search-overview">guide</a> -
+      Source Code on <a href="https://github.com/algolia/demo-geo-search">GitHub</a> -
+      Powered by <a href="http://www.algolia.com/">Algolia</a>
+    </footer>
+    <!-- /Footer -->
 
-      var marker = new google.maps.Marker({
-        position: myCenter,
-      });
-      marker.setMap(map);
-    }
+
+    <!-- Hit template -->
+    <script type="text/template" id="hits-template">
+      {{#hits}}
+      <div class="hit">
+        <h3 class="hit-airport-code">{{{source}}}</h3>
+        <h2 class="hit-name">{{{ title }}}</h2>
+        <p class="hit-location">{{{ activities }}}<span class="hit-distance"> {{ hits.userScore }}</span></p>
+      </div>
+      {{/hits}}
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-    <!--
-    To use this code on your website, get a free API key from Google.
-    Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-    -->
+    <!-- /Hit template -->
+
+
+    <!-- No-Results template -->
+    <script type="text/template" id="no-results-template">
+      <div id="no-results-message">
+        <p>We didn't find any airports in this location.</p>
+      </div>
+    </script>
+    <!-- /No-Results template -->
+
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPKe3DP9RFrEkjd28zQJiF_3dPBvR7ehQ"></script>
+    <script src="map.js"></script>
+    <!-- /Javascript -->
 
     <% include partial/footer.ejs %>
   </body>

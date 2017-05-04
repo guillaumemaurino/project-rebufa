@@ -5,9 +5,8 @@ const Outings = require('../model/outings');
 const Ski = require('../model/ski');
 const Users = require('../model/user');
 
-const applicationID = 'TR971CJDWI';
-const apiKey = '4e93ff805c19864e7e343011ef3dc93c';
-
+const applicationID = 'S4KUBACX2X';
+const apiKey = 'd813e9b18ac817123377a9a4d0ab2f92';
 // We set up the client
 const client = algoliasearch(applicationID, apiKey);
 
@@ -23,7 +22,6 @@ const algolia_init = function(){
 	algolia_init_one(Outings, index_outings);
 	algolia_init_one(Users, index_users);
 	algolia_init_one(Ski, index_ski);
-
 }
 
 const algolia_init_one = function(index_db, index_algolia){
