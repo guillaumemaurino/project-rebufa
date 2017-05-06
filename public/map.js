@@ -19,12 +19,12 @@ $(document).ready(function () {
   var $searchInput = $('#search-input');
   var hitsTemplate = Hogan.compile($('#hits-template').text());
   var noResultsTemplate = Hogan.compile($('#no-results-template').text());
-
+  var edit_mode=false;
   // Map initialization
   var map = new google.maps.Map($map.get(0), {
-    streetViewControl: false,
-    mapTypeControl: false,
-    zoom: 4,
+    streetViewControl: true,
+    mapTypeControl: true,
+    zoom: 3,
     minZoom: 3,
     maxZoom: 12,
     styles: [{stylers: [{hue: '#3596D2'}]}]
@@ -38,11 +38,11 @@ $(document).ready(function () {
   var PAGE_STATES = {
     LOAD: 0,
     BOUNDING_BOX_RECTANGLE: 1,
-    BOUNDING_BOX_POLYGON: 2,
-    AROUND_IP: 4,
-    AROUND_NYC: 5,
-    AROUND_LONDON: 6,
-    AROUND_SYDNEY: 7
+    AROUND_IP: 2,
+    EDIT_OPTION: 3
+    // AROUND_NYC: 5,
+    // AROUND_LONDON: 6,
+    // AROUND_SYDNEY: 7
   };
   var pageState = PAGE_STATES.LOAD;
   setPageState(PAGE_STATES.BOUNDING_BOX_RECTANGLE);
@@ -80,65 +80,13 @@ $(document).ready(function () {
           throttle(rectangleBoundsChanged, 150)
         ));
         break;
-
-      case PAGE_STATES.BOUNDING_BOX_POLYGON:
-        boundingBox = new google.maps.Polygon({
-          paths: [
-          {lat: 42.01, lng: -124.31},
-          {lat: 42.00, lng: -120.01},
-          {lat: 39.01, lng: -120.01},
-          {lat: 35.00, lng: -114.64},
-          {lat: 36.99, lng: -114.03},
-          {lat: 36.99, lng: -109.05},
-          {lat: 31.36, lng: -109.05},
-          {lat: 31.36, lng: -111.09},
-          {lat: 32.48, lng: -114.89},
-          {lat: 32.75, lng: -114.76},
-          {lat: 32.37, lng: -121.20},
-          {lat: 40.09, lng: -125.81},
-          {lat: 42.01, lng: -125.94},
-          {lat: 42.01, lng: -124.31}
-          ],
-          strokeColor: '#EF5362',
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: '#EF5362',
-          fillOpacity: 0.15,
-          draggable: true,
-          editable: true,
-          geodesic: true,
-          map: map
-        });
-        algoliaHelper.setQueryParameter('insidePolygon', polygonsToAlgoliaParams(boundingBox));
-        boundingBoxListeners.push(google.maps.event.addListener(
-          boundingBox.getPath(),
-          'set_at',
-          throttle(polygonBoundsChanged, 150)
-        ));
-        boundingBoxListeners.push(google.maps.event.addListener(
-          boundingBox.getPath(),
-          'insert_at',
-          throttle(polygonBoundsChanged, 150)
-        ));
+        case PAGE_STATES.AROUND_IP:
+          algoliaHelper.setQueryParameter('aroundLatLngViaIP', true);
         break;
 
-      case PAGE_STATES.AROUND_IP:
-        algoliaHelper.setQueryParameter('aroundLatLngViaIP', true);
+       case PAGE_STATES.EDIT_OPTION:
         break;
-
-      case PAGE_STATES.AROUND_NYC:
-        algoliaHelper.setQueryParameter('aroundLatLng', '40.71, -74.01');
-        break;
-
-      case PAGE_STATES.AROUND_LONDON:
-        algoliaHelper.setQueryParameter('aroundLatLng', '51.50, -0.13');
-        break;
-
-      case PAGE_STATES.AROUND_SYDNEY:
-        algoliaHelper.setQueryParameter('aroundLatLng', '-33.86, 151.20');
-        break;
-
-      default:
+      // default:
         // No-op
     }
 
@@ -147,6 +95,9 @@ $(document).ready(function () {
   }
 
   function resetPageState() {
+    if (edit_mode)
+      edit_mode=false;
+
     if (boundingBox) boundingBox.setMap(null);
     for (var i = 0; i < boundingBoxListeners.length; ++i) {
       google.maps.event.removeListener(boundingBoxListeners[i]);
@@ -155,8 +106,8 @@ $(document).ready(function () {
     $searchInput.val('');
     algoliaHelper.setQuery('');
     algoliaHelper.setQueryParameter('insideBoundingBox', undefined);
-    algoliaHelper.setQueryParameter('insidePolygon', undefined);
-    algoliaHelper.setQueryParameter('aroundLatLng', undefined);
+    // algoliaHelper.setQueryParameter('insidePolygon', undefined);
+    // algoliaHelper.setQueryParameter('aroundLatLng', undefined);
     algoliaHelper.setQueryParameter('aroundLatLngViaIP', undefined);
   }
 
@@ -165,7 +116,7 @@ $(document).ready(function () {
   $searchInput.on('input propertychange', function (e) {
     var query = e.currentTarget.value;
     console.log(query);
-    if (pageState === PAGE_STATES.BOUNDING_BOX_RECTANGLE || pageState === PAGE_STATES.BOUNDING_BOX_POLYGON) {
+    if (pageState === PAGE_STATES.BOUNDING_BOX_RECTANGLE) {
       fitMapToMarkersAutomatically = false;
     }
     algoliaHelper.setQuery(query).search();
@@ -199,6 +150,33 @@ $(document).ready(function () {
     $hits.html(hitsTemplate.render(content));
   }
 
+  function icon(hit){//color = #B45F04
+    if (hit.activities.length>1)
+      return "assets/icons/combo.png"
+    else if (!hit.activities)
+      return;
+    else {
+      switch (hit.activities[0]) {
+         case 'hiking':
+           return "assets/icons/hiking.png"
+         break;
+         case 'skitouring':
+           return "assets/icons/skitouring.png"
+         break;
+         case 'snow_ice_mixed':
+           return "assets/icons/snow_ice_mixed.png"
+         break;
+         case 'rock_climbing':
+           return "assets/icons/rock_climbing.png"
+         break;
+         case 'mountain_biking':
+           return "assets/icons/mountain_biking.png"
+         break;
+    }
+  }
+
+  }
+
   function renderMap(content) {
     removeMarkersFromMap();
     markers = [];
@@ -210,48 +188,80 @@ $(document).ready(function () {
         position: {lat: hit._geoloc.lat, lng: hit._geoloc.lng},
         map: map,
         route_id: hit.objectID,
-        title: hit.title
+        title: hit.title,
+	      icon: icon(hit)
       });
-      var markerContent="<div class='markerContent' >"+hit.title+
-      '<iframe width="560" height="315" src="https://www.youtube.com/embed/izGDYKD50lc" frameborder="0" allowfullscreen></iframe>'+'</div>';
+      var markerContent="<div class='markerContent' >"+hit.title+'<br>'
+      +"<button type='button'>Save</button>"
+      +"</div>"
+
+      // '<iframe width="560" height="315" src="https://www.youtube.com/embed/izGDYKD50lc" frameborder="0" allowfullscreen></iframe>'+'</div>';
       markers.push(marker);
       var infoWindowOptions = {
         content: markerContent
       };
-      attachInfoWindow(marker, hit,infoWindowOptions);
+      attachInfoWindow(marker,infoWindowOptions);
     }
 
     if (fitMapToMarkersAutomatically) fitMapToMarkers();
   }
 
+  // edit event new latLnt
+    // ==============
+
+    google.maps.event.addListener(map, 'click', function( e ){
+      if (edit_mode){
+          //lat and lng is available in e object
+          var latLng = {
+            lat : e.latLng.lat(),
+            lng : e.latLng.lng()
+          }
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+          var markerContent="<div class='markerContent' >"
+          +"latitude :"+latLng.lat+"<br>"
+          +"longitude :"+latLng.lng+"<br>"
+          +"<button type='button'>Save</button>"
+          +"</div>"
+
+          // '<iframe width="560" height="315" src="https://www.youtube.com/embed/izGDYKD50lc" frameborder="0" allowfullscreen></iframe>'+'</div>';
+          markers.push(marker);
+          var infoWindowOptions = {
+            content: markerContent
+          };
+          attachInfoWindow(marker,infoWindowOptions);
+      }
+    });
   // EVENTS BINDING
   // ==============
-  $('.change_page_state').on('click', function (e) {
-    e.preventDefault();
-    updateMenu($(this).data('state'), $(this).data('mode'));
-    switch ($(this).data('state')) {
-      case 'rectangle':
-        setPageState(PAGE_STATES.BOUNDING_BOX_RECTANGLE);
+   $('.change_page_state').on('click', function (e) {
+     e.preventDefault();
+     updateMenu($(this).data('state'), $(this).data('mode'));
+     switch ($(this).data('state')) {
+       case 'rectangle':
+         setPageState(PAGE_STATES.BOUNDING_BOX_RECTANGLE);
+      break;
+      case 'edit':
+          edit_mode=true;
         break;
-      case 'polygon':
-        setPageState(PAGE_STATES.BOUNDING_BOX_POLYGON);
-        break;
-      case 'ip':
-        setPageState(PAGE_STATES.AROUND_IP);
-        break;
-      case 'nyc':
-        setPageState(PAGE_STATES.AROUND_NYC);
-        break;
-      case 'london':
-        setPageState(PAGE_STATES.AROUND_LONDON);
-        break;
-      case 'sydney':
-        setPageState(PAGE_STATES.AROUND_SYDNEY);
-        break;
-      default:
-        // No op
-    }
-  });
+       case 'ip':
+         setPageState(PAGE_STATES.AROUND_IP);
+         break;
+  //     case 'nyc':
+  //       setPageState(PAGE_STATES.AROUND_NYC);
+  //       break;
+  //     case 'london':
+  //       setPageState(PAGE_STATES.AROUND_LONDON);
+  //       break;
+  //     case 'sydney':
+  //       setPageState(PAGE_STATES.AROUND_SYDNEY);
+  //       break;
+  //     default:
+  //       // No op
+     }
+   });
 
   // HELPER METHODS
   // ==============
@@ -280,10 +290,6 @@ $(document).ready(function () {
     fitMapToMarkersAutomatically = false;
     algoliaHelper.setQueryParameter('insideBoundingBox', rectangleToAlgoliaParams(boundingBox)).search();
   }
-  function polygonBoundsChanged() {
-    fitMapToMarkersAutomatically = false;
-    algoliaHelper.setQueryParameter('insidePolygon', polygonsToAlgoliaParams(boundingBox)).search();
-  }
 
   function rectangleToAlgoliaParams(rectangle) {
     var bounds = rectangle.getBounds();
@@ -292,25 +298,7 @@ $(document).ready(function () {
     return [ne.lat(), ne.lng(), sw.lat(), sw.lng()].join();
   }
 
-  function polygonsToAlgoliaParams(polygons) {
-    var points = [];
-    polygons.getPaths().forEach(function (path) {
-      path.getArray().forEach(function (latLng) {
-        points.push(latLng.lat());
-        points.push(latLng.lng());
-      });
-    });
-    return points.join();
-  }
-
-  function attachInfoWindow(marker, hit,infoWindowOptions) {
-    // var message;
-    //
-    // if (hit.name === hit.city) {
-    //   message = hit.name + ' - ' + hit.country;
-    // } else {
-    //   message = hit.name + ' - ' + hit.city + ' - ' + hit.country;
-    // }
+  function attachInfoWindow(marker,infoWindowOptions) {
 
     var infowindow = new google.maps.InfoWindow(infoWindowOptions);
     marker.addListener('click', function () {

@@ -7,31 +7,17 @@
   <body>
     <% include partial/nav.ejs %>
         <header>
-      <h1>Airports - Geo Search</h1>
+      <h1>Geo Search</h1>
       <a href="" class="change_page_state page_mode mode_button active" data-mode="bounding" data-state="rectangle">Bounding box</a>
       <a href="" class="change_page_state page_mode mode_button" data-mode="around"   data-state="ip">Around a location</a>
-
-      <p class="page_mode active" data-mode="bounding">
-        A bounding box filters the scope of the results to a specified zone.<br>
-        This zone can be
-        <a href="" class="change_page_state state_link active" data-mode="bounding" data-state="rectangle">a rectangle</a>, or a
-        <a href="" class="change_page_state state_link" data-mode="bounding" data-state="polygon">a polygon</a>.
-      </p>
-      <p class="page_mode" data-mode="around">
-        Searching around a location can also rank the results by distance.<br>
-        It can be done via the
-        <a href="" class="change_page_state state_link" data-mode="around" data-state="ip">IP address</a>, or by providing the lat/lng of a point:
-        <a href="" class="change_page_state state_link" data-mode="around" data-state="nyc">NYC</a>,
-        <a href="" class="change_page_state state_link" data-mode="around" data-state="london">London</a>,
-        <a href="" class="change_page_state state_link" data-mode="around" data-state="sydney">Sydney</a>...
-      </p>
+        <a href="" class="change_page_state page_mode mode_button" data-mode="edit"   data-state="edit">Edit mode</a>
     </header>
 
 
     <!-- Hits and Map -->
     <section class="map_section">
       <div class="left-column">
-        <input id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Search by name, city, airport code..."/>
+        <input id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Search..."/>
         <div id="hits"></div>
       </div>
 
