@@ -32,6 +32,26 @@ var input_participants = document.getElementById("aa-input-participants");
 //Handle add/removing a class based on if text has been entered in the search input
 //attach custom event handler - autocomplete:updated triggers when dataset is rendered
 
+
+//MAP SECTION
+//////////////////////
+$(document).ready(function () {
+  var test = $(".panel-body").html();
+  console.log(test);
+
+  var mapDiv = document.getElementById("map");
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions =
+  {
+      zoom: 8,
+      center:latlng,
+      //backgroundColor: '#ff0000',
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      //imageDefaultUI: true
+  };
+  var map = new google.maps.Map(mapDiv, mapOptions);
+});
+
 function change_outing(outing_id) {
   var change_outing_description = document.getElementById("change_outing_description");
   var change_outing_conditions = document.getElementById("change_outing_conditions");

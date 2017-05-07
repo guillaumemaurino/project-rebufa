@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <% include partial/head.ejs %>
-
+  <style>
+      #map  {
+        width: 100%;
+        height: 400px;
+      }
+  </style>
   <body>
   <% include partial/nav.ejs %>
 
@@ -41,19 +46,30 @@
                 </svg> <!-- Added SVG close icon -->
               </div>
               <!-- For Antoine to do the map -->
-              <% if (outing.routes_information.length > 0) { for(var j=0; j< outing.routes_information.length; j++) { %>
+              <% if (outing.routes_information.length > 0) { for(var j=0; j< outing.routes_information.length; j++)
+
+                {
+                  console.log(outing.routes_information[j].title);
+                  %>
               <div class="panel-body">Routes: <%= outing.routes_information[j].title %> </div>
               <div class="panel-body"><%= outing.routes_information[j].summary %> </div>
               <div class="panel-body">Routes location for ANTOINE: <%= outing.routes_information[j]._geoloc.lat %> <%= outing.routes_information[j]._geoloc.lng %> </div>
+
+
+
 
               <% } } %>
             </div>
           </div>
         </div>
+        <!--map section -->
+        <div id="map"></div>
+
         <div class="space"></div>
       </div>
     </div>
-
+    <!--TODO:change map key id-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPKe3DP9RFrEkjd28zQJiF_3dPBvR7ehQ"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>

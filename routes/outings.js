@@ -58,7 +58,7 @@ module.exports = function(app){
 				}
     }], function (err, data){
 			if (err) throw err;
-			//console.log(data);
+		//	console.log(data);
 			res.render('outings', {
 				outings: data,
 				user: req.user
@@ -71,6 +71,7 @@ module.exports = function(app){
 			// Getting data from mongo dg & pass it to the view
 			console.log('Getting specific outing called.')
 			console.log(req.params.id);
+			console.log
 			Outings.aggregate([
 				{$match:
 					{'_id': mongoose.Types.ObjectId(req.params.id)}
@@ -97,7 +98,6 @@ module.exports = function(app){
 					}
 	    }], function (err, data){
 				if (err) throw err;
-				console.log(data.length);
 				if (data.length == 1)
 				res.render('outing_one', {
 					outing: data[0],
