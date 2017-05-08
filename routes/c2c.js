@@ -77,9 +77,10 @@ var c2c_init_outing = function(document_id){
       };
 			//console.log(c2c_init_outing);
 
-			var result = c2c_get_outing(resultsObj.document_id, function(res){
+			var result = c2c_get_outing(c2c_init_outing, function(res, c2c_init_outing){
 				if (res != undefined){
 					// GMAURINO we do an update.
+          console.log("Outing found : " + res.title + "/ id " + res._id + ". Updating with new values from c2c : " + c2c_init_outing.title)
 					Outings.findByIdAndUpdate({_id: res._id}, c2c_init_outing).then(function(){
 						// we do a get
 						Outings.findOne({_id: res._id}).then(function(outing){
@@ -90,7 +91,7 @@ var c2c_init_outing = function(document_id){
 				else{
 					// Trying to create a new outing
 					Outings.create(c2c_init_outing).then(function(outing){
-						console.log("New outing created : " + outing._id);
+						console.log("New outing created : " + outing._id + " for " + c2c_init_outing.title);
 					});
 				}
 			});
@@ -137,10 +138,10 @@ var c2c_init_route = function(document_id, callback) {
 		        	source: "c2c"
 		        };
 
-	        	var result = c2c_get_route(resultsObj.document_id, function(res){
+	        	var result = c2c_get_route(c2c_init_route, function(res, c2c_init_route){
 	        		if (res != undefined){
 	        			//console.log("Route already imported. Should do an update.");
-	        			// TODO here should be the update.
+                console.log("Route found : " + res.title + "/ id " + res._id + ". Updating with new values from c2c : " + c2c_init_route.title)
 	        			Routes.findByIdAndUpdate({_id: res._id}, c2c_init_route).then(function(){
 							// we do a get
 							Routes.findOne({_id: res._id}).then(function(route){
@@ -153,7 +154,7 @@ var c2c_init_route = function(document_id, callback) {
 	        			//console.log("Route not existing. Should do a create.");
 				        // Trying to create a new route
 				        Routes.create(c2c_init_route).then(function(route){
-								console.log("New route created : " + route._id);
+								console.log("New route created : " + route._id + " for route " + route.title);
                 callback(route);
 						});
 	        		}
@@ -172,8 +173,9 @@ var c2c_init_route = function(document_id, callback) {
 	});
 };
 
-var c2c_get_route = function(document_id, callback){
+var c2c_get_route = function(init_route, callback){
 	// Trying to get route
+  var document_id = init_route.document_id;
 	//console.log('Getting route from mongoose ' + document_id);
 	var query  = Routes.where({ document_id: document_id });
 	query.findOne(function (err, route) {
@@ -182,16 +184,18 @@ var c2c_get_route = function(document_id, callback){
 	  }
 	  if (route){
 	    // doc may be null if no document matched
-	    callback(route);
+	    callback(route, init_route);
 	  }
 	  else{
-	  	callback(undefined);
+	  	callback(undefined, init_route);
 	  }
 	});
 };
 
-var c2c_get_outing = function(document_id, callback){
+var c2c_get_outing = function(init_outing, callback){
 	// Trying to get outing
+  var document_id = init_outing.document_id;
+
 	//console.log('Getting outing from mongoose ' + document_id);
 	var query  = Outings.where({ document_id: document_id });
 	query.findOne(function (err, outing) {
@@ -200,10 +204,10 @@ var c2c_get_outing = function(document_id, callback){
 	  }
 	  if (outing){
 	    // doc may be null if no document matched
-	    callback(outing);
+	    callback(outing, init_outing);
 	  }
 	  else{
-	  	callback(undefined);
+	  	callback(undefined, init_outing);
 	  }
 	});
 };

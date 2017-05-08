@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash    = require('connect-flash');
 const c2c = require('./routes/c2c');
+const init_activity = require('./routes/activity.js')
 const algolia = require('./routes/algolia');
 const morgan       = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -68,6 +69,9 @@ if (!module.parent) {
 
     // Launch c2c initialization functions.
     // c2c.c2c_init_latest_outing();
+
+    // Launch initialization of activities...
+    init_activity.init_activities();
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
