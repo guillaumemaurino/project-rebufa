@@ -3,8 +3,15 @@
 $(document).ready(function () {
   // INITIALIZATION
   // ==============
-  var APPLICATION_ID = 'S4KUBACX2X';
-  var SEARCH_ONLY_API_KEY = '2aabd9cca0f6d44c667055c31647e5d1';
+
+  // Antoine initialization parameters
+  //var APPLICATION_ID = 'S4KUBACX2X';
+  //var SEARCH_ONLY_API_KEY = '2aabd9cca0f6d44c667055c31647e5d1';
+
+  // Guillauem APi key.... We should try to put this on the config folder -> database.js
+  const APPLICATION_ID = 'TR971CJDWI';
+  const SEARCH_ONLY_API_KEY = '4e93ff805c19864e7e343011ef3dc93c';
+
   var INDEX_NAME = 'routes';
   var PARAMS = {hitsPerPage: 60};
 
