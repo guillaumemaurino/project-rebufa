@@ -6,14 +6,9 @@ const Ski = require('../model/ski');
 const Users = require('../model/user');
 
 // Guillauem algolia parameters....
-const applicationID = 'TR971CJDWI';
-const apiKey = '4e93ff805c19864e7e343011ef3dc93c';
-
-// Antoine algolia parameters ....
-//const applicationID = 'S4KUBACX2X';
-//const apiKey = 'd813e9b18ac817123377a9a4d0ab2f92';
+const configAlgolia = require('../config/algolia_config.js');
 // We set up the client
-const client = algoliasearch(applicationID, apiKey);
+const client = algoliasearch(configAlgolia.applicationID, configAlgolia.apiKey);
 
 // We set up the index -> routes & outings.
 const index_routes = client.initIndex('routes');

@@ -1,3 +1,8 @@
+const client = algoliasearch(window.applicationID, window.searchKey);
+var index_routes = client.initIndex('routes');
+var index_outings = client.initIndex('outings');
+
+
 $(document).ready(function(){
   $('li').on('click', function(){
         console.log('delete click')
@@ -17,9 +22,6 @@ $(document).ready(function(){
   });
 });
 
-var client = algoliasearch("TR971CJDWI", "fc29e88ddda3305761a94ef15e700bd1");
-var index_routes = client.initIndex('routes');
-var index_outings = client.initIndex('outings');
 
 //initialize autocomplete on search input (ID selector must match)
 autocomplete('#aa-search-outing',

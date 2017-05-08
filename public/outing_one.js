@@ -1,4 +1,5 @@
-var client = algoliasearch("TR971CJDWI", "fc29e88ddda3305761a94ef15e700bd1");
+
+const client = algoliasearch(window.applicationID, window.searchKey);
 var index_users = client.initIndex('users');
 
 //initialize autocomplete on search input (ID selector must match)

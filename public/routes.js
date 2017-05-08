@@ -1,7 +1,9 @@
+const configAlgolia = require('../config/algolia_config.js');
+
 var search = instantsearch({
   // Replace with your own values
-  appId: 'TR971CJDWI',
-  apiKey: 'fc29e88ddda3305761a94ef15e700bd1', // search only API key, no ADMIN key
+  appId: configAlgolia.applicationID,
+  apiKey: configAlgolia.searchKey, // search only API key, no ADMIN key
   indexName: 'routes',
   urlSync: true
 });

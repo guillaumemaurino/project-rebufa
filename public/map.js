@@ -1,23 +1,14 @@
-/* global $, Hogan, algoliasearch, algoliasearchHelper, google */
+// We set up the algolia search client
+const client = algoliasearch(window.applicationID, window.searchKey);
+const INDEX_NAME = 'routes';
+const PARAMS = {hitsPerPage: 60};
+const algoliaHelper = algoliasearchHelper(client, INDEX_NAME, PARAMS);
+
+// Client + Helper initialization
 
 $(document).ready(function () {
   // INITIALIZATION
   // ==============
-
-  // Antoine initialization parameters
-  //var APPLICATION_ID = 'S4KUBACX2X';
-  //var SEARCH_ONLY_API_KEY = '2aabd9cca0f6d44c667055c31647e5d1';
-
-  // Guillauem APi key.... We should try to put this on the config folder -> database.js
-  const APPLICATION_ID = 'TR971CJDWI';
-  const SEARCH_ONLY_API_KEY = '4e93ff805c19864e7e343011ef3dc93c';
-
-  var INDEX_NAME = 'routes';
-  var PARAMS = {hitsPerPage: 60};
-
-  // Client + Helper initialization
-  var algolia = algoliasearch(APPLICATION_ID, SEARCH_ONLY_API_KEY);
-  var algoliaHelper = algoliasearchHelper(algolia, INDEX_NAME, PARAMS);
   algoliaHelper.setQueryParameter('getRankingInfo', true);
 
   // DOM and Templates binding

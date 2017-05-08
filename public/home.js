@@ -1,4 +1,6 @@
-var client = algoliasearch("TR971CJDWI", "fc29e88ddda3305761a94ef15e700bd1");
+
+// We set up the algolia search client
+const client = algoliasearch(window.applicationID, window.searchKey);
 var index_routes = client.initIndex('routes');
 var index_outings = client.initIndex('outings');
 
@@ -16,15 +18,17 @@ autocomplete('#aa-search-input',
     templates: {
       header: '<div class="aa-suggestions-category">Outings</div>',
       suggestion: function(suggestion) {
-        var result = '<span>' + suggestion._highlightResult.title.value + '</span>';
-        console.log(suggestion._highlightResult.description)
-        if (suggestion._highlightResult.participants != undefined){
-          result += '<span>' + suggestion._highlightResult.participants.value + '</span>';
+        if (suggestion != undefined){
+          var result = '<span>' + suggestion._highlightResult.title.value + '</span>';
+          console.log(suggestion._highlightResult.description)
+          if (suggestion._highlightResult.participants != undefined){
+            result += '<span>' + suggestion._highlightResult.participants.value + '</span>';
+          }
+          else if (suggestion._highlightResult.user_ids.length > 0){
+            result += '<span>' + suggestion._highlightResult.user_ids[0].value + '</span>';
+          }
+          return result;
         }
-        else if (suggestion._highlightResult.user_ids.length > 0){
-          result += '<span>' + suggestion._highlightResult.user_ids[0].value + '</span>';
-        }
-        return result;
       }
     }
   },
