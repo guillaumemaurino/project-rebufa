@@ -35,23 +35,42 @@ var input_participants = document.getElementById("aa-input-participants");
 
 
 //MAP SECTION
-//////////////////////
+////////////////////////////////////////////
+
 $(document).ready(function () {
-  var test = $(".panel-body").html();
-  console.log(test);
+  var outing_info = {
+    geoloc : {}
+  };
+  outing_info.geoloc.lat= parseInt($("#geolocLat").html());
+  outing_info.geoloc.lng= parseInt($("#geolocLng").html());
 
   var mapDiv = document.getElementById("map");
-  var latlng = new google.maps.LatLng(-34.397, 150.644);
+//  var latlng = new google.maps.LatLng(-34.397, 150.644);
   var mapOptions =
   {
       zoom: 8,
-      center:latlng,
+      center:outing_info.geoloc,
       //backgroundColor: '#ff0000',
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       //imageDefaultUI: true
   };
   var map = new google.maps.Map(mapDiv, mapOptions);
+
+  var marker = new google.maps.Marker({
+       position: outing_info.geoloc,
+       map: map
+     });
+
+   var infowindow = new google.maps.InfoWindow({
+     content: '<p> Geolocs : ' + marker.getPosition() + '</p>'
+   });
+
+   google.maps.event.addListener(marker, 'click', function() {
+     infowindow.open(map, marker);
+   });
 });
+
+////////////////////////////////////////////
 
 function change_outing(outing_id) {
   var change_outing_description = document.getElementById("change_outing_description");

@@ -54,7 +54,9 @@
               <div class="panel-body">Routes: <%= outing.routes_information[j].title %> </div>
               <div class="panel-body"><%= outing.routes_information[j].summary %> </div>
               <% if (outing.routes_information[j]._geoloc != undefined) { %>
-              <div class="panel-body">Routes location for ANTOINE: <%= outing.routes_information[j]._geoloc.lat %> <%= outing.routes_information[j]._geoloc.lng %> </div>
+              <div class="panel-body" id="geolocLat"><%= outing.routes_information[j]._geoloc.lat %> </div>
+              <div class="panel-body" id="geolocLng"><%= outing.routes_information[j]._geoloc.lng %></div>
+
 
               <% } } } %>
             </div>

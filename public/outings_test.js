@@ -1,6 +1,7 @@
 const client = algoliasearch(window.applicationID, window.searchKey);
 var index_routes = client.initIndex('routes');
 var index_outings = client.initIndex('outings');
+var index_activity = client.initIndex('activity');
 
 
 $(document).ready(function(){

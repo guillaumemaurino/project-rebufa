@@ -71,7 +71,7 @@ if (!module.parent) {
     // c2c.c2c_init_latest_outing();
 
     // Launch initialization of activities...
-    init_activity.init_activities();
+  //  init_activity.init_activities();
 
     // Launch algolia initialization functions.
     // algolia.algolia_init();
