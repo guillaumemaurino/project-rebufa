@@ -14,6 +14,7 @@ const port     = process.env.PORT || 8080;
 const Grid = require("gridfs-stream");
 
 // Connect to mongoDB
+console.log('Connecting to MondoDB using url : ' + configDB.url);
 mongoose.connect(configDB.url);
 mongoose.Promise = global.Promise;
 // Setting debug to true
