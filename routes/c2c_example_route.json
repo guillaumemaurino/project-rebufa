@@ -1,0 +1,3227 @@
+{
+  "orientations": [
+    "SW"
+  ],
+  "document_id": 51942,
+  "height_diff_up": 1200,
+  "glacier_gear": "glacier_safety_gear",
+  "main_waypoint_id": 37241,
+  "quality": "medium",
+  "associations": {
+    "routes": [
+      {
+        "orientations": [
+          "SW"
+        ],
+        "labande_global_rating": "D",
+        "height_diff_difficulties": null,
+        "protected": false,
+        "geometry": {
+          "version": 5,
+          "geom": "{\"coordinates\": [778673.1589295007, 5772562.157169718], \"type\": \"Point\"}"
+        },
+        "quality": "medium",
+        "labande_ski_rating": "S4",
+        "ski_rating": "4.2",
+        "mixed_rating": null,
+        "elevation_max": 3901,
+        "engagement_rating": "II",
+        "ice_rating": null,
+        "available_langs": [
+          "de",
+          "en",
+          "fr",
+          "it"
+        ],
+        "areas": [
+          {
+            "area_type": "country",
+            "document_id": 14274,
+            "version": 11,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Estat francès",
+                "version": 2,
+                "lang": "ca"
+              },
+              {
+                "title": "Frankreich",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "France",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "France",
+                "version": 2,
+                "lang": "eu"
+              },
+              {
+                "title": "France",
+                "version": 4,
+                "lang": "fr"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "admin_limits",
+            "document_id": 14366,
+            "version": 3,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Alta Saboya",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Savoia Garaia",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 3,
+                "lang": "fr"
+              },
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "range",
+            "document_id": 14410,
+            "version": 17,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Mont-Blanc",
+                "version": 18,
+                "lang": "fr"
+              },
+              {
+                "title": "Monte Bianco",
+                "version": 1,
+                "lang": "it"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Montblanc",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "eu"
+              }
+            ]
+          }
+        ],
+        "locales": [
+          {
+            "title": "Glacier du Milieu",
+            "version": 4,
+            "title_prefix": "Aiguille d'Argentière",
+            "summary": null,
+            "lang": "de"
+          },
+          {
+            "title": "Glacier du Milieu",
+            "version": 5,
+            "title_prefix": "Aiguille d'Argentière",
+            "summary": null,
+            "lang": "en"
+          },
+          {
+            "title": "Glacier du Milieu",
+            "version": 10,
+            "title_prefix": "Aiguille d'Argentière",
+            "summary": null,
+            "lang": "fr"
+          },
+          {
+            "title": "Ghiacciaio du Milieu",
+            "version": 4,
+            "title_prefix": "Aiguille d'Argentière",
+            "summary": null,
+            "lang": "it"
+          }
+        ],
+        "risk_rating": null,
+        "activities": [
+          "skitouring",
+          "snow_ice_mixed"
+        ],
+        "document_id": 45908,
+        "height_diff_up": 1150,
+        "global_rating": "PD+",
+        "version": 5,
+        "ski_exposition": "E2",
+        "type": "r",
+        "equipment_rating": null
+      },
+      {
+        "orientations": [
+          "SE"
+        ],
+        "risk_rating": null,
+        "document_id": 53939,
+        "height_diff_up": 1130,
+        "protected": false,
+        "quality": "medium",
+        "geometry": {
+          "version": 8,
+          "geom": "{\"type\": \"Point\", \"coordinates\": [778846.3365248436, 5771587.530671339]}"
+        },
+        "labande_ski_rating": "S5",
+        "ski_rating": "5.2",
+        "mixed_rating": null,
+        "elevation_max": 3901,
+        "engagement_rating": "III",
+        "ice_rating": null,
+        "available_langs": [
+          "fr",
+          "en"
+        ],
+        "areas": [
+          {
+            "area_type": "country",
+            "document_id": 14067,
+            "version": 8,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Suïssa",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Schweiz",
+                "version": 2,
+                "lang": "de"
+              },
+              {
+                "title": "Switzerland",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Suiza",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Suitza",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Suisse",
+                "version": 1,
+                "lang": "fr"
+              },
+              {
+                "title": "Svizzera",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "country",
+            "document_id": 14274,
+            "version": 11,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Estat francès",
+                "version": 2,
+                "lang": "ca"
+              },
+              {
+                "title": "Frankreich",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "France",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "France",
+                "version": 2,
+                "lang": "eu"
+              },
+              {
+                "title": "France",
+                "version": 4,
+                "lang": "fr"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "admin_limits",
+            "document_id": 14366,
+            "version": 3,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Alta Saboya",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Savoia Garaia",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 3,
+                "lang": "fr"
+              },
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "admin_limits",
+            "document_id": 14384,
+            "version": 9,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Valais",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Wallis",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Valais",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Valais",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Valais",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Valais",
+                "version": 6,
+                "lang": "fr"
+              },
+              {
+                "title": "Vallese",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "range",
+            "document_id": 14410,
+            "version": 17,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Mont-Blanc",
+                "version": 18,
+                "lang": "fr"
+              },
+              {
+                "title": "Monte Bianco",
+                "version": 1,
+                "lang": "it"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Montblanc",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "eu"
+              }
+            ]
+          }
+        ],
+        "locales": [
+          {
+            "title": "Couloir en Y",
+            "version": 6,
+            "title_prefix": "Aiguille d'Argentière",
+            "summary": null,
+            "lang": "fr"
+          },
+          {
+            "title": "Y gully",
+            "version": 5,
+            "title_prefix": "Aiguille d'Argentière",
+            "summary": null,
+            "lang": "en"
+          }
+        ],
+        "activities": [
+          "skitouring",
+          "snow_ice_mixed"
+        ],
+        "labande_global_rating": "TD",
+        "height_diff_difficulties": 450,
+        "global_rating": "AD",
+        "version": 8,
+        "ski_exposition": "E3",
+        "type": "r",
+        "equipment_rating": null
+      }
+    ],
+    "articles": [],
+    "books": [],
+    "images": [
+      {
+        "author": "Photo Laurent Gallot",
+        "filename": "1272211247_169220702.jpg",
+        "document_id": 216915,
+        "version": 2,
+        "protected": false,
+        "areas": [],
+        "type": "i",
+        "available_langs": [
+          "fr"
+        ],
+        "locales": [
+          {
+            "title": "Aiguille d'Argentière, couloir en Y, traversée glacier du Milieu",
+            "version": 1,
+            "lang": "fr"
+          }
+        ],
+        "geometry": {
+          "version": 2,
+          "geom": null
+        }
+      },
+      {
+        "author": null,
+        "filename": "1491307455_1283509981.jpg",
+        "document_id": 868242,
+        "version": 1,
+        "protected": false,
+        "areas": [],
+        "type": "i",
+        "available_langs": [
+          "fr"
+        ],
+        "locales": [
+          {
+            "title": "Y",
+            "version": 1,
+            "lang": "fr"
+          }
+        ],
+        "geometry": null
+      }
+    ],
+    "recent_outings": {
+      "total": 44,
+      "documents": [
+        {
+          "quality": "fine",
+          "author": {
+            "name": "K F",
+            "user_id": 230805
+          },
+          "height_diff_up": null,
+          "protected": false,
+          "areas": [
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                }
+              ]
+            },
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            }
+          ],
+          "date_start": "2017-04-24",
+          "date_end": "2017-04-24",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 1,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "document_id": 879133,
+          "elevation_max": null,
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 1,
+          "condition_rating": "excellent",
+          "type": "o",
+          "available_langs": [
+            "fr"
+          ]
+        },
+        {
+          "quality": "fine",
+          "author": {
+            "name": "MeuhMeuh",
+            "user_id": 13955
+          },
+          "height_diff_up": null,
+          "protected": false,
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "date_start": "2017-04-20",
+          "date_end": "2017-04-20",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 2,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "document_id": 876976,
+          "elevation_max": null,
+          "geometry": {
+            "version": 2,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 2,
+          "condition_rating": "good",
+          "type": "o",
+          "available_langs": [
+            "fr"
+          ]
+        },
+        {
+          "quality": "medium",
+          "date_start": "2017-04-08",
+          "author": {
+            "name": "Mikolaj",
+            "user_id": 828278
+          },
+          "height_diff_up": null,
+          "available_langs": [
+            "en"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            }
+          ],
+          "date_end": "2017-04-08",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 1,
+              "summary": null,
+              "lang": "en"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "type": "o",
+          "document_id": 875963,
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 1,
+          "condition_rating": "good",
+          "elevation_max": null,
+          "protected": false
+        },
+        {
+          "quality": "fine",
+          "date_start": "2017-04-06",
+          "author": {
+            "name": "j'ib",
+            "user_id": 690138
+          },
+          "height_diff_up": 1882,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "date_end": "2017-04-06",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Couloir en Y, descente par le Milieu",
+              "version": 1,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "type": "o",
+          "document_id": 878285,
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [778759.7477271722, 5772074.843920529]}"
+          },
+          "version": 1,
+          "condition_rating": "good",
+          "elevation_max": 3901,
+          "protected": false
+        },
+        {
+          "quality": "medium",
+          "date_start": "2017-04-03",
+          "author": {
+            "name": "Ben74",
+            "user_id": 811268
+          },
+          "height_diff_up": 450,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                }
+              ]
+            },
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                }
+              ]
+            }
+          ],
+          "date_end": "2017-04-03",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Couloir en Y",
+              "version": 1,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "snow_ice_mixed"
+          ],
+          "type": "o",
+          "document_id": 868902,
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [778846.3365248436, 5771587.530671339]}"
+          },
+          "version": 1,
+          "condition_rating": "good",
+          "elevation_max": 3901,
+          "protected": false
+        },
+        {
+          "date_end": "2016-04-29",
+          "elevation_max": 3901,
+          "date_start": "2016-04-29",
+          "document_id": 752426,
+          "height_diff_up": 1200,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "quality": "medium",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 1,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "author": {
+            "name": "guillaume6474",
+            "user_id": 704665
+          },
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 1,
+          "condition_rating": "excellent",
+          "type": "o",
+          "protected": false
+        },
+        {
+          "date_end": "2016-04-10",
+          "elevation_max": 3895,
+          "date_start": "2016-04-10",
+          "document_id": 744844,
+          "height_diff_up": 1200,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "quality": "medium",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 1,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "author": {
+            "name": "fred0",
+            "user_id": 471792
+          },
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 1,
+          "condition_rating": "good",
+          "type": "o",
+          "protected": false
+        },
+        {
+          "date_end": "2016-03-19",
+          "elevation_max": 3895,
+          "date_start": "2016-03-19",
+          "document_id": 735039,
+          "height_diff_up": 1200,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "quality": "medium",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 2,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring"
+          ],
+          "author": {
+            "name": "arnaudS",
+            "user_id": 241017
+          },
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 1,
+          "condition_rating": "good",
+          "type": "o",
+          "protected": false
+        },
+        {
+          "date_end": "2016-03-14",
+          "elevation_max": 3895,
+          "date_start": "2016-03-14",
+          "document_id": 731756,
+          "height_diff_up": 2700,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "quality": "medium",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 2,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "author": {
+            "name": "K F",
+            "user_id": 230805
+          },
+          "geometry": {
+            "version": 2,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+          },
+          "version": 2,
+          "condition_rating": "good",
+          "type": "o",
+          "protected": false
+        },
+        {
+          "date_end": "2015-04-21",
+          "elevation_max": 3791,
+          "date_start": "2015-04-21",
+          "document_id": 625960,
+          "height_diff_up": 1357,
+          "available_langs": [
+            "fr"
+          ],
+          "areas": [
+            {
+              "area_type": "country",
+              "document_id": 14067,
+              "version": 8,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Suïssa",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Schweiz",
+                  "version": 2,
+                  "lang": "de"
+                },
+                {
+                  "title": "Switzerland",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Suiza",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Suitza",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Suisse",
+                  "version": 1,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Svizzera",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "country",
+              "document_id": 14274,
+              "version": 11,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Estat francès",
+                  "version": 2,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Frankreich",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "France",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "France",
+                  "version": 2,
+                  "lang": "eu"
+                },
+                {
+                  "title": "France",
+                  "version": 4,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Francia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14366,
+              "version": 3,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Alta Saboya",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Savoia Garaia",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Haute-Savoie",
+                  "version": 3,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Alta Savoia",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "admin_limits",
+              "document_id": 14384,
+              "version": 9,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Valais",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Wallis",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Valais",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Valais",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Valais",
+                  "version": 1,
+                  "lang": "eu"
+                },
+                {
+                  "title": "Valais",
+                  "version": 6,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Vallese",
+                  "version": 1,
+                  "lang": "it"
+                }
+              ]
+            },
+            {
+              "area_type": "range",
+              "document_id": 14410,
+              "version": 17,
+              "available_langs": null,
+              "type": "a",
+              "protected": false,
+              "locales": [
+                {
+                  "title": "Mont-Blanc",
+                  "version": 18,
+                  "lang": "fr"
+                },
+                {
+                  "title": "Monte Bianco",
+                  "version": 1,
+                  "lang": "it"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "ca"
+                },
+                {
+                  "title": "Montblanc",
+                  "version": 1,
+                  "lang": "de"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "en"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "es"
+                },
+                {
+                  "title": "Mont-Blanc",
+                  "version": 1,
+                  "lang": "eu"
+                }
+              ]
+            }
+          ],
+          "quality": "medium",
+          "locales": [
+            {
+              "title": "Aiguille d'Argentière : Traversée Couloir en Y >> Glacier du Milieu",
+              "version": 1,
+              "summary": null,
+              "lang": "fr"
+            }
+          ],
+          "activities": [
+            "skitouring",
+            "snow_ice_mixed"
+          ],
+          "author": {
+            "name": "cégé",
+            "user_id": 419477
+          },
+          "geometry": {
+            "version": 1,
+            "geom": "{\"type\": \"Point\", \"coordinates\": [781468.6144356047, 5773964.803537334]}"
+          },
+          "version": 1,
+          "condition_rating": "average",
+          "type": "o",
+          "protected": false
+        }
+      ]
+    },
+    "xreports": [],
+    "waypoints": [
+      {
+        "elevation": 3901,
+        "quality": "medium",
+        "waypoint_type": "summit",
+        "document_id": 37241,
+        "version": 2,
+        "protected": false,
+        "areas": [
+          {
+            "area_type": "country",
+            "document_id": 14274,
+            "version": 11,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Estat francès",
+                "version": 2,
+                "lang": "ca"
+              },
+              {
+                "title": "Frankreich",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "France",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "France",
+                "version": 2,
+                "lang": "eu"
+              },
+              {
+                "title": "France",
+                "version": 4,
+                "lang": "fr"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "admin_limits",
+            "document_id": 14366,
+            "version": 3,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Alta Saboya",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Savoia Garaia",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 3,
+                "lang": "fr"
+              },
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "range",
+            "document_id": 14410,
+            "version": 17,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Mont-Blanc",
+                "version": 18,
+                "lang": "fr"
+              },
+              {
+                "title": "Monte Bianco",
+                "version": 1,
+                "lang": "it"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Montblanc",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "eu"
+              }
+            ]
+          }
+        ],
+        "type": "w",
+        "available_langs": [
+          "fr"
+        ],
+        "locales": [
+          {
+            "title": "Aiguille d'Argentière",
+            "version": 10,
+            "summary": "L'aiguille d'Argentière est un sommet majeur du massif du Mont Blanc. Il est situé entre l'[[waypoints/38639|Aiguille du Chardonnet]] et le [[waypoints/37264|Mont Dolent]], sur la frontière franco-suisse.\r\nL'Aiguille d'Argentière est caractérisée en son versant SW par le Glacier du Milieu, grande étendue glacière entre deux hautes arêtes.",
+            "lang": "fr"
+          }
+        ],
+        "geometry": {
+          "version": 2,
+          "geom": "{\"type\": \"Point\", \"coordinates\": [781490.6552414779, 5773907.238785449]}"
+        }
+      },
+      {
+        "elevation": 2760,
+        "quality": "medium",
+        "waypoint_type": "hut",
+        "document_id": 104036,
+        "version": 15,
+        "protected": false,
+        "areas": [
+          {
+            "area_type": "country",
+            "document_id": 14274,
+            "version": 11,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Estat francès",
+                "version": 2,
+                "lang": "ca"
+              },
+              {
+                "title": "Frankreich",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "France",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "France",
+                "version": 2,
+                "lang": "eu"
+              },
+              {
+                "title": "France",
+                "version": 4,
+                "lang": "fr"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "admin_limits",
+            "document_id": 14366,
+            "version": 3,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Alta Saboya",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Savoia Garaia",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 3,
+                "lang": "fr"
+              },
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "range",
+            "document_id": 14410,
+            "version": 17,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Mont-Blanc",
+                "version": 18,
+                "lang": "fr"
+              },
+              {
+                "title": "Monte Bianco",
+                "version": 1,
+                "lang": "it"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Montblanc",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "eu"
+              }
+            ]
+          }
+        ],
+        "type": "w",
+        "available_langs": [
+          "fr",
+          "en",
+          "it"
+        ],
+        "locales": [
+          {
+            "title": "Refuge d'Argentière",
+            "version": 20,
+            "summary": null,
+            "lang": "fr"
+          },
+          {
+            "title": "Refuge d'Argentière",
+            "version": 4,
+            "summary": null,
+            "lang": "en"
+          },
+          {
+            "title": "Refuge d'Argentière",
+            "version": 2,
+            "summary": null,
+            "lang": "it"
+          }
+        ],
+        "geometry": {
+          "version": 15,
+          "geom": "{\"type\": \"Point\", \"coordinates\": [779749.6184054727, 5771745.528208698]}"
+        }
+      },
+      {
+        "elevation": 3295,
+        "quality": "medium",
+        "waypoint_type": "access",
+        "document_id": 104212,
+        "version": 9,
+        "protected": false,
+        "areas": [
+          {
+            "area_type": "country",
+            "document_id": 14274,
+            "version": 11,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Estat francès",
+                "version": 2,
+                "lang": "ca"
+              },
+              {
+                "title": "Frankreich",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "France",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "France",
+                "version": 2,
+                "lang": "eu"
+              },
+              {
+                "title": "France",
+                "version": 4,
+                "lang": "fr"
+              },
+              {
+                "title": "Francia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "admin_limits",
+            "document_id": 14366,
+            "version": 3,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Alta Saboya",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Savoia Garaia",
+                "version": 1,
+                "lang": "eu"
+              },
+              {
+                "title": "Haute-Savoie",
+                "version": 3,
+                "lang": "fr"
+              },
+              {
+                "title": "Alta Savoia",
+                "version": 1,
+                "lang": "it"
+              }
+            ]
+          },
+          {
+            "area_type": "range",
+            "document_id": 14410,
+            "version": 17,
+            "available_langs": null,
+            "type": "a",
+            "protected": false,
+            "locales": [
+              {
+                "title": "Mont-Blanc",
+                "version": 18,
+                "lang": "fr"
+              },
+              {
+                "title": "Monte Bianco",
+                "version": 1,
+                "lang": "it"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "ca"
+              },
+              {
+                "title": "Montblanc",
+                "version": 1,
+                "lang": "de"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "en"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "es"
+              },
+              {
+                "title": "Mont-Blanc",
+                "version": 1,
+                "lang": "eu"
+              }
+            ]
+          }
+        ],
+        "type": "w",
+        "available_langs": [
+          "de",
+          "fr",
+          "it"
+        ],
+        "locales": [
+          {
+            "title": "Grands Montets-Seilbahn",
+            "version": 5,
+            "summary": null,
+            "lang": "de"
+          },
+          {
+            "title": "Téléphérique des Grands Montets",
+            "version": 10,
+            "summary": null,
+            "lang": "fr"
+          },
+          {
+            "title": "Téléphérique des Grands Montets",
+            "version": 4,
+            "summary": null,
+            "lang": "it"
+          }
+        ],
+        "geometry": {
+          "version": 9,
+          "geom": "{\"type\": \"Point\", \"coordinates\": [774779.2031415517, 5772033.704515008]}"
+        }
+      }
+    ]
+  },
+  "geometry": {
+    "version": 6,
+    "geom_detail": "{\"type\": \"LineString\", \"coordinates\": [[771051.113394887, 5776992.603427088, 1219.9999997671694], [771103.4335555572, 5776947.750324358, 1231.9999997671694], [771397.317011252, 5776854.841047367, 1243.999999769032], [771493.0517733361, 5776854.841047367, 1249.999999766238], [771497.5045529656, 5776909.3049882585, 1252.999999766238], [771970.6123888383, 5776651.405166866, 1303.9999997681007], [772124.2332861342, 5776617.7666125465, 1329.9999997643754], [772207.7229042279, 5776569.711756236, 1342.9999997681007], [772172.1006671749, 5776452.77936003, 1359.9999997671694], [772333.5139288232, 5776278.184541644, 1395.9999997681007], [772364.6833862468, 5776294.202271716, 1399.999999766238], [772714.2265873374, 5776233.335051322, 1487.9999997653067], [772781.0182818142, 5776266.972147805, 1503.999999766238], [772831.1120526709, 5776225.326237628, 1524.9999997671694], [772881.2058235276, 5776287.795176216, 1528.9999997681007], [772906.8093064094, 5776246.149168273, 1539.9999997671694], [772985.8461448735, 5776257.361535796, 1557.999999766238], [773048.1850597179, 5776222.122714173, 1569.9999997653067], [773117.2031440078, 5776266.972147805, 1583.999999766238], [773382.1435320954, 5776266.972147805, 1634.999999766238], [773406.6338200704, 5776297.405821201, 1640.999999766238], [773461.1803705596, 5776236.538578826, 1659.999999766238], [773559.1415224569, 5776294.202271716, 1683.9999997681007], [773640.4047507372, 5776249.352700409, 1701.9999997671694], [773554.6887428274, 5776053.939357587, 1734.9999997681007], [773598.1033442357, 5775823.293082167, 1766.9999997671694], [773463.4067603757, 5775687.1505258735, 1794.999999766238], [773382.1435320954, 5775541.400222544, 1834.999999769032], [773167.2969148646, 5775387.644256354, 1886.999999766238], [773064.882983335, 5775360.416915079, 1922.9999997681007], [773002.5440684906, 5775283.540167248, 1946.9999997671694], [772988.0725346897, 5775240.297289353, 1951.9999997671694], [773081.5809069547, 5775136.194929307, 1967.999999766238], [773267.484456581, 5775160.2184424335, 1985.9999997681007], [773348.7476848585, 5775216.273559381, 1996.9999997681007], [773421.1053538742, 5775126.585542272, 2005.9999997671694], [773838.5534443482, 5775174.632581533, 2043.999999766238], [774467.5085673302, 5775493.351196841, 2052.9999997643754], [774676.789210022, 5775453.310540889, 2051.9999997653067], [774749.1468790376, 5775501.359349722, 2050.9999997681007], [775066.4074277981, 5775486.944679744, 2085.9999997671694], [774997.3893435082, 5775418.074913145, 2093.999999766238], [775118.727588471, 5775408.46522078, 2108.999999769032], [775040.8039449163, 5775363.620127363, 2119.999999766238], [775114.2748088387, 5775201.859352624, 2154.9999997671694], [775169.9345542373, 5775163.4215824315, 2156.999999766238], [775153.2366306174, 5775060.921676111, 2193.9999997671694], [775135.4255120909, 5775115.374603892, 2194.9999997643754], [775145.4442662622, 5775033.695337556, 2216.999999769032], [775403.7054849013, 5774580.469150623, 2282.999999766238], [775871.247346235, 5774181.713313105, 2318.999999766238], [775924.6807018146, 5774236.160844874, 2317.9999997671694], [775941.3786254345, 5774191.321676786, 2321.9999997671694], [775938.0390407116, 5774229.755235562, 2321.9999997671694], [776022.6418537119, 5774208.937037221, 2335.9999997671694], [776184.0551153631, 5774002.3591009965, 2352.999999766238], [776408.9204867652, 5773872.649831737, 2357.999999766238], [776569.2205535069, 5773717.3214734215, 2380.999999769032], [776723.9546457096, 5773534.774095035, 2420.9999997681007], [776802.9914841737, 5773381.0528998, 2456.9999997671694], [776892.0470768092, 5773078.422078991, 2516.999999766238], [776877.5755430056, 5772961.535689099, 2541.999999766238], [776817.4630179774, 5772875.072774956, 2562.9999997671694], [776894.2734666254, 5772859.061216644, 2561.9999997671694], [776872.0095684666, 5772835.043933337, 2562.999999766238], [776936.574873127, 5772772.599300977, 2562.9999997681007], [776979.9894745352, 5772638.104662198, 2553.999999769032], [777061.2527028156, 5772514.819700668, 2549.999999766238], [777369.6076923114, 5772380.328968751, 2545.9999997681007], [777376.28686176, 5772449.17516021, 2545.9999997681007], [777469.795234025, 5772383.531105348, 2546.9999997643754], [777559.9640215671, 5772223.425690944, 2559.999999766238], [777655.6987836512, 5772133.767920586, 2572.9999997671694], [777826.0176045642, 5772085.737344789, 2583.9999997671694], [778062.0149250472, 5771957.657080202, 2592.999999766238], [778291.3330760788, 5771920.834346246, 2606.9999997671694], [778403.7657617828, 5771872.804922874, 2618.9999997671694], [778601.9144553937, 5771704.703988045, 2637.999999766238], [779151.8327399115, 5771711.10777484, 2648.999999766238], [779299.8876626685, 5771797.5593488775, 2667.999999769032], [779459.0745345006, 5771773.544938285, 2677.9999997653067], [779696.1850498903, 5771663.079486491, 2699.999999766238], [779688.3926855351, 5771776.746855939, 2722.9999997671694], [779762.9767443669, 5771747.929638602, 2742.9999997671694], [780013.4455986508, 5771834.381571335, 2815.9999997671694], [780067.9921491399, 5771831.179632882, 2826.9999997671694], [780071.3317338655, 5771797.5593488775, 2828.9999997681007], [780130.3310639842, 5771783.150694721, 2840.9999997681007], [780144.8025977879, 5771813.56899204, 2848.9999997653067], [780230.5186056978, 5771803.963202675, 2871.999999766238], [780247.2165293177, 5771876.0068763485, 2887.9999997671694], [780292.857520542, 5771906.425491941, 2898.9999997671694], [780331.8193423208, 5771885.612743692, 2911.9999997653067], [780415.3089604145, 5771972.066017683, 2928.9999997671694], [780446.478417838, 5772064.924176007, 2939.999999766238], [780491.0062141558, 5772098.54547292, 2945.9999997671694], [780479.874265075, 5772146.576118038, 2952.9999997671694], [780532.1944257478, 5772170.591538079, 2955.999999766238], [780574.4958322495, 5772292.270665142, 2979.9999997653067], [780653.5326707136, 5772353.110854332, 2998.999999766238], [780624.5896031063, 5772383.531105348, 3012.9999997653067], [780639.06113691, 5772425.158986246, 3016.9999997671694], [780816.0591272715, 5772538.8361172825, 3059.9999997671694], [780940.73695696, 5772556.448197444, 3089.9999997653067], [780951.8689060381, 5772634.902433738, 3097.9999997671694], [780990.8307278168, 5772604.481321003, 3106.999999766238], [781134.4328709415, 5772646.110238399, 3140.9999997671694], [781107.7161931503, 5772734.172053318, 3140.9999997653067], [781119.9613371377, 5772751.784521175, 3142.9999997681007], [781091.0182695304, 5772754.98679181, 3144.9999997671694], [781114.3953625988, 5772724.565267407, 3144.9999997681007], [781136.6592607548, 5772751.784521175, 3152.9999997671694], [781291.3933529574, 5772754.98679181, 3188.9999997671694], [781327.0155900134, 5772820.633594563, 3204.999999769032], [781301.4121071289, 5772971.14273156, 3246.9999997671694], [781345.9399034466, 5773015.975733929, 3276.9999997671694], [781437.2218858983, 5773036.791133455, 3306.9999997681007], [781482.8628771227, 5773096.0352301365, 3339.999999769032], [781487.315656755, 5773091.231639992, 3341.999999766238], [781501.7871905587, 5773123.255623391, 3341.999999769032], [781416.0711826461, 5773015.975733929, 3345.999999766238], [781480.6364873066, 5773057.606581807, 3366.9999997681007], [781463.9385636895, 5773075.219691635, 3369.9999997681007], [781528.5038683472, 5773120.05321985, 3369.999999766238], [781514.0323345463, 5773096.0352301365, 3372.9999997681007], [781516.2587243625, 5773108.844816559, 3381.9999997671694], [781480.6364873066, 5773115.249616708, 3382.999999766238], [781506.239970191, 5773091.231639992, 3391.9999997681007], [781508.4663600044, 5773096.035230133, 3393.9999997681007], [781451.693419702, 5773064.011344976, 3395.999999766238], [781514.0323345463, 5773112.047216056, 3420.999999769032], [781595.2955628238, 5773243.346590483, 3493.999999766238], [781578.5976392067, 5773280.174812693, 3513.999999769032], [781630.9177998797, 5773339.420534386, 3550.9999997653067], [781633.144189693, 5773456.31190222, 3583.999999769032], [781664.3136471165, 5773483.533400717, 3583.9999997681007], [781630.9177998769, 5773473.925803473, 3590.999999766238], [781639.8233591416, 5773494.742277313, 3600.9999997653067], [781697.7094943535, 5773531.571542971, 3650.999999766238], [781662.0872573004, 5773494.742277317, 3658.9999997653067], [781709.954638341, 5773566.799679246, 3660.999999766238], [781676.5587911041, 5773545.983036362, 3664.9999997671694], [781689.9171299983, 5773566.799679246, 3674.9999997653067], [781685.4643503659, 5773542.780480251, 3687.999999766238], [781724.4261721447, 5773558.7932723565, 3703.999999766238], [781721.0865874218, 5773669.282325515, 3781.9999997671694], [781764.5011888301, 5773710.916238673, 3811.9999997653067], [781535.1830377956, 5773789.380682962, 3877.9999997671694], [781489.5420465713, 5773927.095466923, 3888.9999997681007], [781480.6364873066, 5773920.690080737, 3891.9999997653067], [781408.2788182909, 5773936.703554874, 3831.9999997671694], [781327.0155900134, 5773885.460539369, 3795.9999997653067], [781343.7135136304, 5773858.237807758, 3784.9999997653067], [781305.8648867612, 5773848.629804772, 3763.9999997671694], [781293.6197427736, 5773795.7859743545, 3737.9999997681007], [781147.7912098357, 5773675.687530209, 3696.999999766238], [781076.5467357266, 5773528.368992062, 3680.9999997671694], [780790.4556443897, 5773417.88169357, 3622.999999766238], [780799.3612036516, 5773390.660396478, 3565.999999766238], [780734.7958989912, 5773345.825500968, 3566.999999766238], [780732.5695091778, 5773300.990831994, 3565.9999997681007], [780390.8186724422, 5773039.9935069475, 3328.9999997671694], [780328.4797575979, 5773039.9935069475, 3322.9999997653067], [780121.4255047224, 5773195.310008608, 3310.9999997681007], [780080.2372931275, 5773126.458028088, 3259.9999997671694], [780125.8782843547, 5773015.975733929, 3249.9999997671694], [780059.0865898781, 5773030.386389938, 3245.999999769032], [779944.4275143609, 5772985.55331476, 3202.999999766238], [779898.7865231364, 5773012.773369105, 3187.999999766238], [779621.6009910585, 5773039.9935069475, 3100.999999766238], [779631.6197452298, 5772988.755669766, 3094.9999997643754], [779559.2620762142, 5772971.142731564, 3071.9999997653067], [779444.6030006998, 5772670.127010344, 2983.9999997653067], [779366.6793571423, 5772686.138227755, 2972.999999766238], [779390.0564502106, 5772662.121412478, 2970.999999766238], [779318.8119761017, 5772631.7002064325, 2945.9999997653067], [779287.6425186809, 5772487.601173742, 2893.9999997681007], [779134.0216213849, 5772401.142877283, 2863.9999997671694], [779151.8327399115, 5772388.334312408, 2864.9999997671694], [779089.4938250672, 5772377.12683331, 2852.9999997671694], [778993.759062986, 5772257.047588364, 2838.999999766238], [779017.1361560515, 5772233.031934353, 2832.9999997671694], [779187.4549769645, 5772274.659109276, 2819.999999766238], [778995.9854528022, 5772109.752600191, 2729.9999997653067], [779041.6264440266, 5772074.530247838, 2715.999999769032], [779017.1361560515, 5772040.909041911, 2707.9999997671694], [779062.7771472788, 5771944.849155408, 2695.9999997681007], [779019.3625458677, 5771912.829424301, 2690.9999997671694], [779000.4382324344, 5771813.56899204, 2686.999999766238], [778943.6652921293, 5771824.775759441, 2685.999999766238], [778948.1180717616, 5771747.929638602, 2684.9999997653067], [778876.8735976525, 5771635.863571803, 2681.9999997643754], [778776.6860559391, 5771576.62922245, 2676.9999997671694], [778541.8019303655, 5771618.253318532, 2665.9999997671694], [778236.7865255926, 5771797.5593488775, 2641.999999769032], [778026.3926879913, 5771848.790308667, 2633.9999997681007], [777753.6599355486, 5771989.676973049, 2611.9999997671694], [777634.5480803989, 5771986.474978563, 2608.9999997671694], [777598.9258433459, 5772040.909041915, 2598.999999766238], [777524.341784514, 5772068.126198797, 2588.999999766238], [777478.7007932897, 5772271.457011967, 2581.9999997653067], [777398.5507599188, 5772305.079091362, 2574.9999997681007], [777321.7403112708, 5772431.563292948, 2572.9999997681007], [777023.4040759435, 5772679.733737328, 2575.9999997671694], [776855.3116448467, 5772875.072774956, 2583.9999997681007], [776903.1790258873, 5773027.184019913, 2548.9999997671694], [776894.2734666254, 5773140.868863524, 2530.999999769032], [776786.2935605538, 5773333.015572433, 2505.9999997653067], [776733.9733998809, 5773518.761346273, 2467.9999997681007], [776604.8427905628, 5773659.674527143, 2428.9999997671694], [776550.2962400737, 5773840.62314357, 2416.999999766238], [776313.185724684, 5774068.015132962, 2401.9999997681007], [776167.3571917432, 5773978.338722884, 2403.9999997653067], [776162.9044121137, 5774040.791841233, 2401.999999766238], [776129.508564874, 5774032.785006621, 2398.999999766238], [776086.0939634658, 5774136.874420176, 2394.9999997681007], [775921.3411170917, 5774332.245539574, 2374.9999997681007], [775823.3799651944, 5774401.106877546, 2360.9999997671694], [775785.5313383222, 5774469.968749985, 2356.999999766238], [775577.36389054, 5774586.875013155, 2351.9999997681007], [775401.479095088, 5774764.63954346, 2331.9999997681007], [775279.0276552156, 5774979.242911116, 2314.9999997653067], [775118.727588471, 5775075.3356538825, 2314.9999997681007], [775145.4442662622, 5774998.461376403, 2314.9999997671694], [775083.1053514179, 5774865.534510036, 2307.9999997681007], [775095.3504954055, 5774889.557290242, 2298.9999997671694], [775018.5400467574, 5774950.415291247, 2272.9999997681007], [774953.974742097, 5775112.171481238, 2236.999999769032], [774863.8059545548, 5775181.038873097, 2211.9999997671694], [774906.1073610564, 5775229.08620727, 2202.9999997681007], [774849.3344207511, 5775240.297289357, 2185.9999997653067], [774913.8997254116, 5775373.229771155, 2162.9999997681007], [774844.8816411216, 5775517.375677163, 2124.9999997671694], [774720.203811433, 5775510.969142715, 2109.9999997671694], [774653.4121169564, 5775456.5137867145, 2104.9999997681007], [774419.6411862896, 5775711.175531045, 2069.9999997671694], [774352.8494918129, 5775642.30402364, 2055.9999997643754], [774257.1147297317, 5775672.735554003, 2040.9999997681007], [774092.3618833577, 5775637.499054708, 2023.9999997653067], [774130.210510227, 5775651.91396932, 2017.999999769032], [774067.8715953827, 5775655.117286859, 2011.9999997681007], [774111.2861967938, 5775679.1422052765, 2005.9999997681007], [774023.3437990649, 5775687.1505258735, 1993.999999766238], [774121.3049509651, 5775741.6072976645, 1980.9999997671694], [773961.0048842207, 5775762.429092873, 1956.999999763444], [774056.7396463046, 5775828.098151737, 1942.9999997681007], [773881.9680457592, 5775840.911683322, 1911.9999997671694], [773829.6478850864, 5775778.445891672, 1903.9999997653067], [773831.8742749025, 5775864.937104927, 1891.9999997643754], [773790.6860633076, 5775802.471144099, 1886.999999766238], [773771.7617498743, 5775930.606922643, 1867.999999766238], [773788.4596734914, 5775967.446301533, 1859.9999997653067], [773829.6478850864, 5775964.242871208, 1855.9999997671694], [773855.251367968, 5776060.346284178, 1846.9999997671694], [773673.8005979742, 5776017.0996194985, 1821.9999997671694], [773604.7825136842, 5775948.225736939, 1811.9999997671694], [773573.6130562606, 5775951.429161475, 1806.999999766238], [773561.3679122732, 5776053.939357587, 1792.999999766238], [773638.1783609211, 5776167.662992469, 1768.999999766238], [773631.4991914725, 5776215.7156707365, 1760.999999766238], [773548.009573379, 5776270.1756874565, 1736.9999997681007], [773394.388676083, 5776284.591630202, 1697.999999766238], [773360.992828846, 5776239.742107485, 1689.9999997671694], [773098.2788305746, 5776254.158000774, 1635.9999997671694], [773035.9399157304, 5776198.09632515, 1621.9999997671694], [772991.4121194126, 5776233.335051322, 1610.9999997681007], [772887.8849929734, 5776246.149168273, 1587.9999997671694], [772847.8099762879, 5776305.4146999745, 1574.9999997681007], [772725.3585364155, 5776308.6182535095, 1543.9999997653067], [772701.98144335, 5776332.644941892, 1538.999999766238], [772656.3404521255, 5776308.6182535095, 1525.9999997653067], [772368.0229709696, 5776297.405821198, 1458.9999997671694], [772218.854853306, 5776383.9020946305, 1434.9999997653067], [772011.8006004303, 5776614.56294736, 1368.9999997653067], [771572.0886117974, 5776834.016687757, 1309.9999997681007], [771534.2399849282, 5776914.11064616, 1304.9999997653067], [771330.5253167782, 5776896.489913259, 1290.9999997671694], [771029.9626916348, 5776971.778744042, 1272.9999997643754]]}",
+    "geom": "{\"type\": \"Point\", \"coordinates\": [781684.5858456494, 5773523.221800105]}"
+  },
+  "locales": [
+    {
+      "remarks": "- Evidemment si on prend le téléphérique des Grands Montets, ça change un peu pour le dénivelé du premier jour! (200m de montée et 650m de descente)\r\n- A la montée l'étroiture peut présenter un court passage de mixte selon l'enneigement.\r\n- A la descente, au dessus de la rimaye, la pente est raide (40°, une section étroite avec rochers à presque 45°).\r\n- Le couloir en Y est SW mais les pentes du dessus sont SE et donc chauffe assez vite. Descente SW.\r\n- Traversée permettant de varier les plaisirs. ",
+      "external_resources": null,
+      "gear": null,
+      "summary": null,
+      "slope": "40°",
+      "title": "Traversée Couloir en Y >> Glacier du Milieu",
+      "route_history": null,
+      "lang": "fr",
+      "description": "##Montée \r\n[b]Au refuge d'Argentière[/b] \r\nDu parking de la Rosière remonter la piste puis suivre le sentier qui mène au refuge de Lognan (montée efficace). Poursuivre SE vers le point 2338m où l'on prend pied sur le glacier. \r\nRemonter en restant rive gauche jusque sous les moraines des Rognons vers 2550m. (on peut rejoindre ce point depuis l'arrivée du téléphérique des Grands Montets). Continuer sur le Glacier d'Argentière en restant d'abord sur sa rive gauche (attention, passage possible en rive droite mais présentant une importante zone crevassée délicate par mauvais temps) puis traverser en oblique à partir de l'altitude 2650m en prenant la direction du refuge. Le gagner par la gauche en évitant la moraine prononcée et son socle rocheux.\r\n[img=216915 right]Aiguille d'Argentière, couloir en Y, traversée glacier du Milieu[/img]\r\n##Montée\r\n[b]Couloir en Y[/b]\r\nDu refuge d'Argentière suivre la route du Col du Tour Noir, en restant rive droite du glacier des Améthystes, jusqu'au couloir évident. La rimaye se passe soit directement, soit en la contournant par la droite du petit éperon rocheux.\r\nSelon l'enneigement, l'étroiture au dessus de la rimaye peut présenter un peu de mixte, de glace (relais rive droite). Au milieu du couloir on peut monter la branche de gauche (souvent en glace) ou celle de droite (plus souvent en neige).\r\nPoursuivre jusqu'au sommet par une large crête en neige sans difficulté particulière. \r\n\r\n##Descente\r\n[b]Glacier du Milieu[/b] \r\nSi les conditions sont bonnes chausser au sommet pour rejoindre par un couloir raide (45°) les larges pentes qui descendent du col, sinon gagner le col à pied. Suivre les larges pentes qui se retrécissent et se raidissent pour déboucher sur un passage raide (45°) entre des rochers. A la sortie de ce couloir on débouche les larges pentes (35°) au dessus de la rimaye que l'on franchit en général plutôt rive droite. \r\nPoursuivre la descente rive gauche jusque sous le Casque puis rive droite. \r\nRejoindre le glacier d'Argentière et l'itinéraire de montée.",
+      "topic_id": null,
+      "version": 6,
+      "title_prefix": "Aiguille d'Argentière"
+    }
+  ],
+  "route_length": 25572,
+  "labande_ski_rating": "S4",
+  "route_types": [
+    "loop"
+  ],
+  "lift_access": null,
+  "ski_rating": "4.2",
+  "configuration": null,
+  "durations": [
+    "2"
+  ],
+  "elevation_max": 3895,
+  "maps": [
+    {
+      "version": 1,
+      "document_id": 104631,
+      "code": "46",
+      "available_langs": null,
+      "editor": "Swisstopo",
+      "type": "m",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Val de Bagnes",
+          "version": 1,
+          "lang": "fr"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "document_id": 104639,
+      "code": "282",
+      "available_langs": null,
+      "editor": "Swisstopo",
+      "type": "m",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Martigny",
+          "version": 1,
+          "lang": "fr"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "document_id": 104830,
+      "code": "1344",
+      "available_langs": null,
+      "editor": "Swisstopo",
+      "type": "m",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Col de Balme",
+          "version": 1,
+          "lang": "fr"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "document_id": 104831,
+      "code": "1345",
+      "available_langs": null,
+      "editor": "Swisstopo",
+      "type": "m",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Orsières",
+          "version": 1,
+          "lang": "fr"
+        }
+      ]
+    },
+    {
+      "version": 3,
+      "document_id": 106616,
+      "code": "3630OT",
+      "available_langs": null,
+      "editor": "IGN",
+      "type": "m",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Chamonix - Massif du Mont Blanc",
+          "version": 4,
+          "lang": "fr"
+        }
+      ]
+    }
+  ],
+  "height_diff_down": 2700,
+  "height_diff_access": null,
+  "available_langs": [
+    "fr"
+  ],
+  "areas": [
+    {
+      "area_type": "country",
+      "document_id": 14067,
+      "version": 8,
+      "available_langs": null,
+      "type": "a",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Suïssa",
+          "version": 1,
+          "lang": "ca"
+        },
+        {
+          "title": "Schweiz",
+          "version": 2,
+          "lang": "de"
+        },
+        {
+          "title": "Switzerland",
+          "version": 1,
+          "lang": "en"
+        },
+        {
+          "title": "Suiza",
+          "version": 1,
+          "lang": "es"
+        },
+        {
+          "title": "Suitza",
+          "version": 1,
+          "lang": "eu"
+        },
+        {
+          "title": "Suisse",
+          "version": 1,
+          "lang": "fr"
+        },
+        {
+          "title": "Svizzera",
+          "version": 1,
+          "lang": "it"
+        }
+      ]
+    },
+    {
+      "area_type": "country",
+      "document_id": 14274,
+      "version": 11,
+      "available_langs": null,
+      "type": "a",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Estat francès",
+          "version": 2,
+          "lang": "ca"
+        },
+        {
+          "title": "Frankreich",
+          "version": 1,
+          "lang": "de"
+        },
+        {
+          "title": "France",
+          "version": 1,
+          "lang": "en"
+        },
+        {
+          "title": "Francia",
+          "version": 1,
+          "lang": "es"
+        },
+        {
+          "title": "France",
+          "version": 2,
+          "lang": "eu"
+        },
+        {
+          "title": "France",
+          "version": 4,
+          "lang": "fr"
+        },
+        {
+          "title": "Francia",
+          "version": 1,
+          "lang": "it"
+        }
+      ]
+    },
+    {
+      "area_type": "admin_limits",
+      "document_id": 14366,
+      "version": 3,
+      "available_langs": null,
+      "type": "a",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Alta Savoia",
+          "version": 1,
+          "lang": "ca"
+        },
+        {
+          "title": "Haute-Savoie",
+          "version": 1,
+          "lang": "de"
+        },
+        {
+          "title": "Haute-Savoie",
+          "version": 1,
+          "lang": "en"
+        },
+        {
+          "title": "Alta Saboya",
+          "version": 1,
+          "lang": "es"
+        },
+        {
+          "title": "Savoia Garaia",
+          "version": 1,
+          "lang": "eu"
+        },
+        {
+          "title": "Haute-Savoie",
+          "version": 3,
+          "lang": "fr"
+        },
+        {
+          "title": "Alta Savoia",
+          "version": 1,
+          "lang": "it"
+        }
+      ]
+    },
+    {
+      "area_type": "admin_limits",
+      "document_id": 14384,
+      "version": 9,
+      "available_langs": null,
+      "type": "a",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Valais",
+          "version": 1,
+          "lang": "ca"
+        },
+        {
+          "title": "Wallis",
+          "version": 1,
+          "lang": "de"
+        },
+        {
+          "title": "Valais",
+          "version": 1,
+          "lang": "en"
+        },
+        {
+          "title": "Valais",
+          "version": 1,
+          "lang": "es"
+        },
+        {
+          "title": "Valais",
+          "version": 1,
+          "lang": "eu"
+        },
+        {
+          "title": "Valais",
+          "version": 6,
+          "lang": "fr"
+        },
+        {
+          "title": "Vallese",
+          "version": 1,
+          "lang": "it"
+        }
+      ]
+    },
+    {
+      "area_type": "range",
+      "document_id": 14410,
+      "version": 17,
+      "available_langs": null,
+      "type": "a",
+      "protected": false,
+      "locales": [
+        {
+          "title": "Mont-Blanc",
+          "version": 18,
+          "lang": "fr"
+        },
+        {
+          "title": "Monte Bianco",
+          "version": 1,
+          "lang": "it"
+        },
+        {
+          "title": "Mont-Blanc",
+          "version": 1,
+          "lang": "ca"
+        },
+        {
+          "title": "Montblanc",
+          "version": 1,
+          "lang": "de"
+        },
+        {
+          "title": "Mont-Blanc",
+          "version": 1,
+          "lang": "en"
+        },
+        {
+          "title": "Mont-Blanc",
+          "version": 1,
+          "lang": "es"
+        },
+        {
+          "title": "Mont-Blanc",
+          "version": 1,
+          "lang": "eu"
+        }
+      ]
+    }
+  ],
+  "elevation_min": 1220,
+  "activities": [
+    "skitouring"
+  ],
+  "labande_global_rating": "D+",
+  "height_diff_difficulties": null,
+  "version": 6,
+  "ski_exposition": "E2",
+  "type": "r",
+  "protected": false
+}
