@@ -68,13 +68,13 @@ if (!module.parent) {
 	   console.log('Now listening for requests on port ' + port);
 
     // Launch c2c initialization functions.
-    // c2c.c2c_init_latest_outing();
+    c2c.c2c_init_latest_outing();
 
     // Launch initialization of activities...
-  //  init_activity.init_activities();
+    init_activity.init_activities();
 
     // Launch algolia initialization functions.
-    // algolia.algolia_init();
-		// algolia.algolia_setting();
+    algolia.algolia_init();
+    algolia.algolia_setting();
   });
 }
